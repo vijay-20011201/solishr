@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiting Services - Solis HR Solutions</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            width: 100%;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background: #ffffff;
+            width: 100%;
+            min-height: 100vh;
+        }
+        
+
+        /* Custom Cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #2563eb;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: 0.1s;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(37, 99, 235, 0.3);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: 0.15s;
+            transform: translate(-50%, -50%);
+        }
+
+        body.cursor-active .cursor {
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+
+        /* Color Variables */
+        :root {
+            --primary-blue: #2563eb;
+            --primary-orange: #f97316;
+            --light-bg: #f8fafc;
+            --dark-text: #1e293b;
+        }
+
+        /* Scroll Animations */
+        .scroll-animate {
+            opacity: 0;
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-animate.slide-up {
+            transform: translateY(60px);
+        }
+
+        .scroll-animate.slide-down {
+            transform: translateY(-60px);
+        }
+
+        .scroll-animate.slide-left {
+            transform: translateX(60px);
+        }
+
+        .scroll-animate.slide-right {
+            transform: translateX(-60px);
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        /* Hero Section with Animated Background */
+        .hero-section {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #2563eb 100%);
+            padding: 140px 20px 120px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            min-height: auto;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-section h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #fbbf24;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-section p {
+            font-size: 1.3rem;
+            margin-bottom: 45px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.9;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 1.15rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f97316, #fb923c);
+            color: white;
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(249, 115, 22, 0.6);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-blue);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255,255,255,0.5);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        .content-section {
+            padding: 100px 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-heading {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .section-underline {
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-orange), #fb923c);
+            margin: 0 auto 40px;
+            border-radius: 3px;
+        }
+
+        .section-description {
+            color: var(--primary-orange);
+            font-size: 1.3rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            line-height: 1.9;
+            font-weight: 500;
+        }
+
+        /* ========== SECTION 1 - About Recruiting (Blue BG with Image) ========== */
+        .about-section {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(59, 130, 246, 0.95)),
+                        url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600') center/cover;
+            color: white;
+            width: 100vw;
+    margin: 0;
+    padding: 80px 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+        }
+
+        .about-section .section-heading {
+            color: white;
+        }
+
+        .about-section .section-underline {
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+        }
+
+        .about-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            max-width: 1100px;
+    margin: auto;
+        }
+
+        .about-content p {
+            font-size: 1.25rem;
+            color: white;
+            margin-bottom: 25px;
+            text-align: center;
+            line-height: 2;
+        }
+
+        /* ========== SECTION 2 - Hiring Process (White with GIF) ========== */
+        .process-section {
+            background: white;
+            width: 100%;
+        }
+
+        .process-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .process-gif {
+            text-align: center;
+        }
+
+        .process-gif img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .process-gif img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .process-timeline {
+            padding: 20px;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 35px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .process-step:hover {
+            transform: translateX(15px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+        }
+
+        .process-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-blue), #3b82f6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .process-content {
+            margin-left: 25px;
+        }
+
+        .process-content h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .process-content p {
+            color: var(--primary-orange);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 968px) {
+            .process-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== SECTION 3 - Roles (Orange Gradient BG) ========== */
+        .roles-section {
+            background: linear-gradient(135deg, #f97316, #fb923c, #fdba74);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roles-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .roles-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .roles-section .section-heading {
+            color: white;
+        }
+
+        .roles-section .section-underline {
+            background: linear-gradient(90deg, white, rgba(255,255,255,0.8));
+        }
+
+        .roles-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .role-card {
+            flex: 0 0 calc(25% - 23px);
+            max-width: 280px;
+            background: white;
+            padding: 50px 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .role-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .role-card:hover::before {
+            left: 100%;
+        }
+
+        .role-card:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+        }
+
+        .role-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.35rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .role-card:nth-child(5) {
+            margin-left: calc(12.5% + 15px);
+        }
+
+        @media (max-width: 1024px) {
+            .role-card {
+                flex: 0 0 calc(33.333% - 20px);
+            }
+            .role-card:nth-child(5) {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .role-card {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* ========== SECTION 4 - Why Choose (White with Pattern BG) ========== */
+        .why-section {
+            background: white;
+            position: relative;
+        }
+
+        .why-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(30deg, #f0f9ff 12%, transparent 12.5%, transparent 87%, #f0f9ff 87.5%, #f0f9ff),
+                linear-gradient(150deg, #f0f9ff 12%, transparent 12.5%, transparent 87%, #f0f9ff 87.5%, #f0f9ff),
+                linear-gradient(30deg, #f0f9ff 12%, transparent 12.5%, transparent 87%, #f0f9ff 87.5%, #f0f9ff),
+                linear-gradient(150deg, #f0f9ff 12%, transparent 12.5%, transparent 87%, #f0f9ff 87.5%, #f0f9ff);
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+            opacity: 0.3;
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 35px;
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.5s ease;
+            border: 2px solid transparent;
+        }
+
+        .why-item:hover {
+            background: linear-gradient(135deg, var(--primary-blue), #3b82f6);
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.3);
+            border-color: white;
+        }
+
+        .why-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-orange), #fb923c);
+            border-radius: 12px;
+            margin-right: 25px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .why-icon::before {
+            content: '✓';
+            color: white;
+            font-weight: bold;
+        }
+
+        .why-item:hover .why-icon {
+            transform: rotate(360deg) scale(1.1);
+            background: white;
+        }
+
+        .why-item:hover .why-icon::before {
+            color: var(--primary-orange);
+        }
+
+        .why-item p {
+            color: #475569;
+            font-size: 1.15rem;
+            font-weight: 600;
+            transition: color 0.4s ease;
+        }
+
+        .why-item:hover p {
+            color: white;
+        }
+
+        /* ========== SECTION 5 & 6 - Employers & Job Seekers (Dark BG with Image) ========== */
+        .dual-section-wrapper {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95)),
+                        url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1600') center/cover fixed;
+            padding: 100px 20px;
+        }
+
+        .dual-section {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 60px 45px;
+            border-radius: 25px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(37, 99, 235, 0.1), transparent 30deg);
+            animation: rotateGradient 4s linear infinite;
+        }
+
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .info-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 35px 90px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-card h3 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--primary-blue);
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-card p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            line-height: 1.9;
+            color: #475569;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-card .btn {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 968px) {
+            .dual-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== SECTION 7 - Success Metrics (Blue Gradient with GIF) ========== */
+        .metrics-section {
+            background: linear-gradient(135deg, #1e40af, #3b82f6, #60a5fa);
+            color: white;
+            position: relative;
+        }
+
+        .metrics-section .section-heading {
+            color: white;
+        }
+
+        .metrics-section .section-underline {
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+        }
+
+        .metrics-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .metrics-gif {
+            text-align: center;
+        }
+
+        .metrics-gif img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 35px;
+        }
+
+        .metric-item {
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .metric-item:hover {
+            transform: translateY(-15px) scale(1.08);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+        }
+
+        .metric-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fbbf24;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .metric-label {
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        @media (max-width: 968px) {
+            .metrics-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== SECTION 8 - CTA (Orange Gradient with Animation) ========== */
+        .cta-section {
+            background: linear-gradient(135deg, #ea580c, #f97316, #fb923c);
+            padding: 120px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px),
+                radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px, 80px 80px;
+            background-position: 0 0, 40px 40px;
+            animation: movePattern 30s linear infinite;
+        }
+
+        @keyframes movePattern {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: white;
+            font-weight: 900;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+        }
+
+        .cta-section p {
+            font-size: 1.4rem;
+            margin-bottom: 45px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-section .btn {
+            background: white;
+            color: var(--primary-orange);
+            font-size: 1.2rem;
+            padding: 20px 45px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .cta-section .btn:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        /* ========== ADD THESE RESPONSIVE STYLES TO YOUR EXISTING CSS ========== */
+
+/* Hero Section Responsive */
+@media (max-width: 1200px) {
+    .hero-section {
+        padding: 120px 20px 100px;
+    }
+    
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-section {
+        padding: 100px 20px 80px;
+    }
+    
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 80px 15px 60px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .hero-buttons {
+        gap: 15px;
+    }
+    
+    .btn {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1.1rem;
+    }
+    
+    .hero-section p {
+        font-size: 0.95rem;
+    }
+    
+    .btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Content Section Responsive */
+@media (max-width: 1200px) {
+    .content-section {
+        padding: 80px 20px;
+    }
+    
+    .section-heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .content-section {
+        padding: 70px 20px;
+    }
+    
+    .section-heading {
+        font-size: 2.2rem;
+    }
+    
+    .section-description {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        padding: 60px 15px;
+    }
+
+    .section-heading {
+        font-size: 1.9rem;
+    }
+    
+    .section-description {
+        font-size: 1.05rem;
+        margin-bottom: 40px;
+    }
+    
+    .section-underline {
+        width: 80px;
+        height: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-section {
+        padding: 50px 15px;
+    }
+    
+    .section-heading {
+        font-size: 1.6rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+    }
+}
+
+/* About Section Responsive */
+@media (max-width: 992px) {
+    .about-content {
+        padding: 50px 40px;
+    }
+    
+    .about-content p {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        min-height: auto;
+    }
+    
+    .about-content {
+        padding: 40px 30px;
+    }
+
+    .about-content p {
+        font-size: 1.05rem;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-content {
+        padding: 30px 20px;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+/* Process Section Responsive */
+@media (max-width: 992px) {
+    .process-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .process-gif {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .process-step {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+    
+    .process-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .process-content {
+        margin-left: 20px;
+    }
+    
+    .process-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .process-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-step {
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .process-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .process-content {
+        margin-left: 0;
+    }
+    
+    .process-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .process-content p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Roles Section Responsive */
+@media (max-width: 1024px) {
+    .role-card {
+        flex: 0 0 calc(33.333% - 20px);
+        max-width: 300px;
+    }
+    
+    .role-card:nth-child(5) {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .roles-grid {
+        gap: 20px;
+    }
+    
+    .role-card {
+        flex: 0 0 calc(50% - 10px);
+        max-width: 100%;
+        padding: 40px 25px;
+    }
+    
+    .role-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .role-card {
+        flex: 0 0 100%;
+        padding: 35px 20px;
+    }
+    
+    .role-card h3 {
+        font-size: 1.15rem;
+    }
+}
+
+/* Why Section Responsive */
+@media (max-width: 992px) {
+    .why-choose-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .why-item {
+        padding: 25px 20px;
+    }
+    
+    .why-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        margin-right: 20px;
+    }
+    
+    .why-item p {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-item {
+        padding: 20px 15px;
+    }
+    
+    .why-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin-right: 15px;
+    }
+    
+    .why-item p {
+        font-size: 1rem;
+    }
+}
+
+/* Dual Section Responsive */
+@media (max-width: 992px) {
+    .dual-section-wrapper {
+        padding: 80px 20px;
+    }
+    
+    .dual-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dual-section-wrapper {
+        padding: 60px 15px;
+    }
+    
+    .info-card {
+        padding: 40px 30px;
+    }
+
+    .info-card h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .info-card p {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-card {
+        padding: 30px 20px;
+    }
+    
+    .info-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .info-card p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+/* Metrics Section Responsive */
+@media (max-width: 992px) {
+    .metrics-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .metrics-gif {
+        order: -1;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .metric-item {
+        padding: 30px 20px;
+    }
+    
+    .metric-number {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+    }
+
+    .metric-label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .metric-item {
+        padding: 25px 15px;
+    }
+    
+    .metric-number {
+        font-size: 2.5rem;
+    }
+    
+    .metric-label {
+        font-size: 0.95rem;
+    }
+}
+
+/* CTA Section Responsive */
+@media (max-width: 992px) {
+    .cta-section {
+        padding: 100px 20px;
+    }
+    
+    .cta-section h2 {
+        font-size: 3rem;
+    }
+    
+    .cta-section p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 80px 15px;
+        min-height: auto;
+    }
+
+    .cta-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+    }
+
+    .cta-section p {
+        font-size: 1.1rem;
+        margin-bottom: 35px;
+    }
+    
+    .cta-buttons {
+        gap: 15px;
+    }
+    
+    .cta-section .btn {
+        font-size: 1.05rem;
+        padding: 16px 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-section {
+        padding: 60px 15px;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-section p {
+        font-size: 1rem;
+    }
+    
+    .cta-section .btn {
+        font-size: 1rem;
+        padding: 14px 30px;
+    }
+}
+
+/* Hide cursor on mobile */
+@media (max-width: 768px) {
+    .cursor,
+    .cursor-follower {
+        display: none;
+    }
+}
+
+/* Ensure all sections are scrollable on small screens */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    section {
+        min-height: auto;
+        width: 100%;
+    }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+    .btn,
+    a {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 360px) {
+    .hero-section h1 {
+        font-size: 1.6rem;
+    }
+    
+    .section-heading {
+        font-size: 1.4rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="scroll-animate slide-up">Recruiting Services That Power Growth</h1>
+            <h2 class="scroll-animate slide-up">Find the right talent, at the right time, for the right role.</h2>
+            <p class="scroll-animate slide-up">At Solis Human Resource Solutions, we go beyond resumes. Our recruiting services are designed to connect skilled professionals with organizations that value talent, culture, and performance.</p>
+            <div class="hero-buttons scroll-animate slide-up">
+                <a href="#contact" class="btn btn-primary">Get Hiring Help</a>
+                <a href="#job-requirement" class="btn btn-secondary">Submit Job Requirement</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 1 - About Recruiting Services ========== -->
+    <section class="content-section about-section">
+        <h2 class="section-heading scroll-animate slide-right">End-to-End Recruitment Solutions</h2>
+        <div class="section-underline"></div>
+        
+        <div class="about-content scroll-animate slide-left">
+            <p>We provide complete recruitment support, covering every stage of the hiring process. From understanding your business needs to onboarding the right candidate, our recruitment model ensures quality, speed, and accuracy in every placement.</p>
+            <p style="font-weight: 700; font-size: 1.3rem; margin-top: 20px;">We focus not just on filling vacancies — we help build strong teams.</p>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2 - Our Hiring Process ========== -->
+    <section class="content-section process-section">
+        <h2 class="section-heading scroll-animate slide-down">How We Hire the Right Talent</h2>
+        <div class="section-underline"></div>
+
+        <div class="process-container">
+            <div class="process-timeline scroll-animate slide-right">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <div class="process-content">
+                        <h3>Requirement Analysis</h3>
+                        <p>Understanding job roles and skill needs</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <div class="process-content">
+                        <h3>Talent Sourcing</h3>
+                        <p>Finding candidates from multiple channels</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <div class="process-content">
+                        <h3>Resume Screening</h3>
+                        <p>Shortlisting quality profiles</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <div class="process-content">
+                        <h3>Interviews & Evaluation</h3>
+                        <p>Coordinating candidates and interviews</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">5</div>
+                    <div class="process-content">
+                        <h3>Final Selection</h3>
+                        <p>Sending best-fit candidates</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">6</div>
+                    <div class="process-content">
+                        <h3>Offer & Joining Support</h3>
+                        <p>Assisting until onboarding</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-gif scroll-animate slide-left">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWM3MHE5d3h2ZnBqdDN3OWt5Njh0cWdkNXZ6YWJhM3E2dGlqNWZoYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0HlQXlQ3nHyLMvte/giphy.gif" alt="Hiring Process">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3 - What We Recruit For ========== -->
+    <section class="content-section roles-section">
+        <h2 class="section-heading scroll-animate slide-up">Roles We Recruit Across Industries</h2>
+        <div class="section-underline"></div>
+
+        <div class="roles-grid">
+            <div class="role-card scroll-animate slide-up">
+                <h3>IT & Software Professionals</h3>
+            </div>
+            <div class="role-card scroll-animate slide-up">
+                <h3>Accounts & Finance Executives</h3>
+            </div>
+            <div class="role-card scroll-animate slide-up">
+                <h3>HR & Admin Staff</h3>
+            </div>
+            <div class="role-card scroll-animate slide-up">
+                <h3>Sales & Marketing Professionals</h3>
+            </div>
+            <div class="role-card scroll-animate slide-down">
+                <h3>Engineering & Manufacturing Roles</h3>
+            </div>
+            <div class="role-card scroll-animate slide-down">
+                <h3>Customer Support & BPO</h3>
+            </div>
+            <div class="role-card scroll-animate slide-down">
+                <h3>Executive & Leadership Positions</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 4 - Why Choose Solis ========== -->
+    <section class="content-section why-section">
+        <h2 class="section-heading scroll-animate slide-right">Why Clients Choose Solis</h2>
+        <div class="section-underline"></div>
+
+        <div class="why-choose-grid">
+            <div class="why-item scroll-animate slide-left">
+                <div class="why-icon"></div>
+                <p>Industry-focused hiring approach</p>
+            </div>
+            <div class="why-item scroll-animate slide-right">
+                <div class="why-icon"></div>
+                <p>Skilled recruiter team</p>
+            </div>
+            <div class="why-item scroll-animate slide-left">
+                <div class="why-icon"></div>
+                <p>Quick turnaround time</p>
+            </div>
+            <div class="why-item scroll-animate slide-right">
+                <div class="why-icon"></div>
+                <p>Quality candidate filtering</p>
+            </div>
+            <div class="why-item scroll-animate slide-left">
+                <div class="why-icon"></div>
+                <p>Transparent communication</p>
+            </div>
+            <div class="why-item scroll-animate slide-right">
+                <div class="why-icon"></div>
+                <p>Affordable recruitment solutions</p>
+            </div>
+            <div class="why-item scroll-animate slide-up">
+                <div class="why-icon"></div>
+                <p>Long-term hiring partnership</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 5 & 6 - Employers & Job Seekers ========== -->
+    <section class="dual-section-wrapper">
+        <div class="dual-section">
+            <div class="info-card scroll-animate slide-right">
+                <h3>Hiring Made Simple for Employers</h3>
+                <p>We partner with organizations of all sizes to supply reliable talent. Whether you are hiring one employee or building teams, we deliver candidates who fit both skill and culture.</p>
+                <a href="#request-talent" class="btn btn-primary">Request Talent</a>
+            </div>
+
+            <div class="info-card scroll-animate slide-left">
+                <h3>Careers Start Here</h3>
+                <p>If you are searching for your next role, Solis helps connect you with trusted organizations. We guide you through interviews and match you with roles suited to your experience and future goals.</p>
+                <a href="#upload-resume" class="btn btn-primary">Upload Your Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 7 - Success Metrics ========== -->
+    <section class="content-section metrics-section">
+        <h2 class="section-heading scroll-animate slide-down">Our Recruitment Impact</h2>
+        <div class="section-underline"></div>
+
+        <div class="metrics-content">
+            <div class="metrics-gif scroll-animate slide-right">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzBvZ3N6ZWkxMnJrbTFzcXdhY2xzZWZ5NWh4cGxrcnJiYmFpb3V4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Success Metrics">
+            </div>
+
+            <div class="metrics-grid scroll-animate slide-left">
+                <div class="metric-item">
+                    <div class="metric-number">1000+</div>
+                    <div class="metric-label">Profiles Screened</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">300+</div>
+                    <div class="metric-label">Successful Hiring</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">15+</div>
+                    <div class="metric-label">Industries Served</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">30+</div>
+                    <div class="metric-label">Hiring Partners</div>
+                </div>
+                <div class="metric-item">
+                    <div class="metric-number">90%</div>
+                    <div class="metric-label">Client Retention</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 8 - Call To Action ========== -->
+    <section class="cta-section">
+        <div class="cta-content scroll-animate slide-up">
+            <h2>Let's Build Your Team Together</h2>
+            <p>Looking for skilled employees? Or searching for the right job? Solis is ready to support your journey.</p>
+            <div class="cta-buttons">
+                <a href="#contact-recruiter" class="btn">Contact Recruiter</a>
+                <a href="#hire-talent" class="btn">Hire Talent</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+        // CRITICAL FIX: Load header and footer FIRST, then initialize animations
+        let headerLoaded = false;
+        let footerLoaded = false;
+
+        // Load Header
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                headerLoaded = true;
+                checkIfReady();
+            })
+            .catch(error => console.error("Header error:", error));
+
+        // Load Footer
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+                footerLoaded = true;
+                checkIfReady();
+            })
+            .catch(error => console.error("Footer error:", error));
+
+        // Wait for both to load, then initialize animations
+        function checkIfReady() {
+            if (headerLoaded && footerLoaded) {
+                setTimeout(() => {
+                    initializeAllAnimations();
+                }, 150);
+            }
+        }
+
+        // Initialize all animations AFTER header/footer loaded
+        function initializeAllAnimations() {
+            // Custom Cursor
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+
+            if (cursor && cursorFollower) {
+                document.addEventListener('mousemove', (e) => {
+                    cursor.style.left = e.clientX + 'px';
+                    cursor.style.top = e.clientY + 'px';
+                    
+                    setTimeout(() => {
+                        cursorFollower.style.left = e.clientX + 'px';
+                        cursorFollower.style.top = e.clientY + 'px';
+                    }, 100);
+                });
+
+                document.addEventListener('mousedown', () => {
+                    document.body.classList.add('cursor-active');
+                });
+
+                document.addEventListener('mouseup', () => {
+                    document.body.classList.remove('cursor-active');
+                });
+            }
+
+            // Scroll Animation Observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all scroll-animate elements
+            document.querySelectorAll('.scroll-animate').forEach(el => {
+                observer.observe(el);
+            });
+        }
+    </script>
+</body>
+</html>

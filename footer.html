@@ -1,0 +1,309 @@
+<!-- FOOTER START -->
+<style>
+/* Footer Only Reset */
+.footer * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #001a3d 0%, #003d7a 50%, #0047AB 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    from { left: -100%; }
+    to { left: 100%; }
+}
+
+/* Trust Banner */
+.trust-badge {
+    background: rgba(255, 107, 53, 0.1);
+    border-left: 4px solid #FF6B35;
+    padding: 16px;
+    text-align: center;
+}
+
+.trust-badge p {
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Content Grid */
+.footer-main {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Branding */
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo-image {
+    height: 70px;   /* adjust based on design */
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-description {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.8);
+}
+
+.footer-tagline {
+    margin-top: 8px;
+    color: #FF6B35;
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* Social */
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    transition: .3s;
+}
+
+.social-icon:hover {
+    background: #FF6B35;
+}
+
+/* Columns */
+.footer-column h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    position: relative;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    height: 3px;
+    width: 45px;
+    background: linear-gradient(90deg,#FF6B35,transparent);
+}
+
+/* Links */
+.footer-links {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #FF6B35;
+}
+
+/* Contact */
+.contact-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+}
+
+.contact-icon { color: #FF6B35; }
+
+/* Bottom */
+.footer-bottom {
+    background: rgba(0,0,0,.35);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 13px;
+}
+
+.footer-legal {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-legal a {
+    text-decoration: none;
+    color: rgba(255,255,255,.7);
+}
+
+.footer-legal a:hover {
+    color: #FF6B35;
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background: linear-gradient(135deg,#0047AB,#FF6B35);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: .3s;
+}
+
+.back-to-top.visible { opacity: 1; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-legal {
+        flex-direction: column;
+    }
+}
+</style>
+
+
+<footer class="footer">
+
+  <div class="trust-badge">
+    <p>✔ Trusted by growing companies across multiple cities</p>
+  </div>
+
+  <div class="footer-main">
+
+    <div>
+      <div class="footer-logo">
+    <img src="Gifs/Solis_Logo_Final.png" alt="Solis Human Resource Solutions" class="footer-logo-image">
+</div>
+
+      <p class="footer-description">
+        Solis Human Resource Solutions is your trusted hiring partner, delivering reliable staffing and recruitment services across industries.
+      </p>
+
+      <p class="footer-tagline">Building Teams. Creating Futures.</p>
+
+      <div class="social-icons">
+        <a href="#" class="social-icon">📘</a>
+        <a href="#" class="social-icon">💼</a>
+        <a href="#" class="social-icon">📷</a>
+        <a href="#" class="social-icon">🐦</a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Services</h3>
+      <ul class="footer-links">
+        <li><a href="#">Recruitment</a></li>
+        <li><a href="#">Staffing</a></li>
+        <li><a href="#">Leadership Hiring</a></li>
+        <li><a href="#">Gig Workforce</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <div class="contact-item"><span class="contact-icon">📍</span>Bangalore, India</div>
+      <div class="contact-item"><span class="contact-icon">📞</span>+91 98765 43210</div>
+      <div class="contact-item"><span class="contact-icon">📧</span>info@solishr.com</div>
+      <div class="contact-item"><span class="contact-icon">🕒</span>Mon–Fri | 9AM–6PM</div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div>© 2025 All Right Reserved By NIYAN IT SOLUTIONS</div>
+    <ul class="footer-legal">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Refund</a></li>
+    </ul>
+  </div>
+
+</footer>
+
+<div class="back-to-top">↑</div>
+
+<script>
+const topBtn = document.querySelector(".back-to-top");
+window.addEventListener("scroll", () => {
+    topBtn.classList.toggle("visible", window.scrollY > 300);
+});
+topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+</script>
+<!-- FOOTER END -->
