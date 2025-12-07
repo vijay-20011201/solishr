@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Hiring | Solis Human Resource Solutions</title>
+    <meta name="description" content="Strategic hiring for CXO, Senior Management & High-Impact Roles. Empowering organizations with exceptional leadership talent.">
+    <link rel="stylesheet" href="leadership.css">
+    <style>
+        /* ===== RESET & GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+/* ===== CUSTOM CURSOR ===== */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FF6B35;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: 0.1s;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(0, 71, 171, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: 0.15s;
+    transform: translate(-50%, -50%);
+}
+
+body.cursor-active .cursor {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #0047AB;
+    margin-bottom: 20px;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.section-title.white {
+    color: white;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.8;
+}
+
+.section-subtitle.center {
+    text-align: center;
+}
+
+.section-subtitle.white {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #FF6B35, #FF8C61);
+    color: white;
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #0047AB;
+    border: 2px solid #0047AB;
+}
+
+.btn.shine::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0%, 100% { left: -100%; }
+    50% { left: 100%; }
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    height: 100vh;
+    background: 
+        linear-gradient(135deg, rgba(0, 71, 171, 0.9) 0%, rgba(255, 140, 97, 0.85) 100%),
+        url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(0, 71, 171, 0.15) 0%, transparent 50%);
+}
+
+/* Floating Particles */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: floatParticle 10s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+    animation-duration: 8s;
+}
+
+.particle:nth-child(2) {
+    left: 30%;
+    top: 70%;
+    animation-delay: 2s;
+    animation-duration: 10s;
+}
+
+.particle:nth-child(3) {
+    left: 70%;
+    top: 30%;
+    animation-delay: 4s;
+    animation-duration: 12s;
+}
+
+.particle:nth-child(4) {
+    left: 85%;
+    top: 60%;
+    animation-delay: 1s;
+    animation-duration: 9s;
+}
+
+.particle:nth-child(5) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 3s;
+    animation-duration: 11s;
+}
+
+@keyframes floatParticle {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    50% {
+        transform: translate(100px, -100px) scale(1.5);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 1000px;
+    padding: 0 20px;
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* ===== LEADERSHIP IMPORTANCE SECTION ===== */
+.leadership-importance {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.text-content {
+    animation: slideLeft 1s ease-out;
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.section-description {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.importance-points {
+    display: grid;
+    gap: 25px;
+}
+
+.importance-item {
+    display: flex;
+    gap: 20px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    align-items: flex-start;
+}
+
+.importance-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.importance-text h3 {
+    color: #0047AB;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.importance-text p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.image-content img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== LEADERSHIP ROLES SECTION ===== */
+.leadership-roles {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #001f3f 0%, #0047AB 100%);
+    color: white;
+}
+
+.leadership-roles .section-title,
+.leadership-roles .section-subtitle {
+    color: white;
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.role-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: zoomIn 0.8s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.role-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.role-icon {
+    font-size: 2.5rem;
+}
+
+.role-card h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.role-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.role-badge {
+    background: rgba(255, 107, 53, 0.9);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* ===== HIRING APPROACH SECTION ===== */
+.hiring-approach {
+    padding: 100px 0;
+    background: white;
+}
+
+.process-timeline {
+    max-width: 900px;
+    margin: 50px auto 0;
+    position: relative;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #0047AB, #FF6B35);
+}
+
+.process-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    animation: slideLeft 0.8s ease-out;
+}
+
+.process-number {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #0047AB, #FF6B35);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    box-shadow: 0 5px 20px rgba(0, 71, 171, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.process-content {
+    flex: 1;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.process-content h3 {
+    color: #0047AB;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.process-content p {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* ===== SOLIS DIFFERENCE SECTION ===== */
+.solis-difference {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0047AB 0%, #003380 100%);
+    color: white;
+}
+
+.strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.strength-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideRight 1s ease-out;
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.strength-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.strength-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.strength-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ===== INDUSTRIES SECTION ===== */
+.industries {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.industry-card {
+    background: white;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.8s ease-out;
+}
+
+.industry-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.industry-card h3 {
+    color: #0047AB;
+    font-size: 1.2rem;
+}
+
+/* ===== SUCCESS STORIES SECTION ===== */
+.success-stories {
+    padding: 100px 0;
+    background: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.testimonial-card {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    position: relative;
+    animation: fadeIn 1s ease-out;
+}
+
+.quote-icon {
+    font-size: 4rem;
+    color: #FF6B35;
+    opacity: 0.2;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.testimonial-author strong {
+    display: block;
+    color: #0047AB;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.testimonial-author span {
+    color: #999;
+    font-size: 0.95rem;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-section .btn-primary {
+    background: white;
+    color: #FF6B35;
+}
+
+.cta-section .btn-secondary {
+    border-color: white;
+    color: white;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 5px 40px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .roles-grid,
+    .strengths-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .industries-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .roles-grid,
+    .strengths-grid,
+    .industries-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-timeline::before {
+        left: 30px;
+    }
+    
+    .process-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Empowering Organizations with Exceptional Leadership Talent</h1>
+            <h2 class="hero-subtitle">Strategic Hiring for CXO, Senior Management & High-Impact Roles</h2>
+            <p class="hero-description">
+                Solis Human Resource Solutions specializes in leadership recruitment, helping companies identify transformative leaders who drive innovation, performance, and long-term success. Our executive hiring process focuses on industry expertise, proven track records, and cultural alignment.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary shine">Request Leadership Hiring Support</a>
+                <a href="#contact" class="btn btn-secondary">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Leadership Hiring Matters -->
+    <section class="leadership-importance">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="text-content slide-left">
+                    <h2 class="section-title">Leadership Shapes the Future of Your Business</h2>
+                    <p class="section-description">
+                        A strong leader influences every part of an organization — from employee morale to revenue growth. Solis identifies leaders who bring clarity, strategy, and innovation to your business, helping you scale confidently in a competitive market.
+                    </p>
+                    <div class="importance-points">
+                        <div class="importance-item">
+                            <div class="importance-icon">🎯</div>
+                            <div class="importance-text">
+                                <h3>Importance of Leadership Hiring</h3>
+                                <p>Right leaders define organizational success and culture</p>
+                            </div>
+                        </div>
+                        <div class="importance-item">
+                            <div class="importance-icon">📈</div>
+                            <div class="importance-text">
+                                <h3>Impact of Strategic Placements</h3>
+                                <p>Executive hires directly influence revenue and growth trajectory</p>
+                            </div>
+                        </div>
+                        <div class="importance-item">
+                            <div class="importance-icon">💼</div>
+                            <div class="importance-text">
+                                <h3>Why Domain Expertise Matters</h3>
+                                <p>Industry knowledge ensures leaders understand market dynamics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Corporate Boardroom">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Roles -->
+    <section class="leadership-roles">
+        <div class="container">
+            <h2 class="section-title center">Leadership Roles We Specialize In</h2>
+            <p class="section-subtitle center">Solis recruits senior-level and executive positions across industries.</p>
+            
+            <div class="roles-grid">
+                <div class="role-card zoom-in">
+                    <div class="role-header">
+                        <div class="role-icon">👔</div>
+                        <h3>CXO Roles</h3>
+                    </div>
+                    <div class="role-list">
+                        <span class="role-badge">CEO</span>
+                        <span class="role-badge">CTO</span>
+                        <span class="role-badge">CFO</span>
+                        <span class="role-badge">CHRO</span>
+                        <span class="role-badge">CMO</span>
+                        <span class="role-badge">COO</span>
+                    </div>
+                </div>
+
+                <div class="role-card zoom-in">
+                    <div class="role-header">
+                        <div class="role-icon">🎖️</div>
+                        <h3>Vice Presidents & Directors</h3>
+                    </div>
+                    <div class="role-list">
+                        <span class="role-badge">VP Engineering</span>
+                        <span class="role-badge">VP Finance</span>
+                        <span class="role-badge">Director of Operations</span>
+                        <span class="role-badge">Director of HR</span>
+                    </div>
+                </div>
+
+                <div class="role-card zoom-in">
+                    <div class="role-header">
+                        <div class="role-icon">💼</div>
+                        <h3>Senior Management</h3>
+                    </div>
+                    <div class="role-list">
+                        <span class="role-badge">Senior Managers</span>
+                        <span class="role-badge">Program Heads</span>
+                        <span class="role-badge">Business Unit Leaders</span>
+                    </div>
+                </div>
+
+                <div class="role-card zoom-in">
+                    <div class="role-header">
+                        <div class="role-icon">🎯</div>
+                        <h3>Department Leads</h3>
+                    </div>
+                    <div class="role-list">
+                        <span class="role-badge">Team Leads</span>
+                        <span class="role-badge">Functional Heads</span>
+                        <span class="role-badge">Project Leads</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Hiring Approach -->
+<section class="hiring-approach">
+    <div class="container">
+        <h2 class="section-title center">Strategic & Confidential Leadership Recruitment</h2>
+        <p class="section-subtitle center">
+            Leadership hiring is not the same as regular recruitment. It requires strategic planning, 
+            deep industry insight, high-level evaluation, and complete confidentiality. Solis follows a 
+            research-driven executive hiring methodology to identify leaders who can influence growth 
+            and long-term organizational success.
+        </p>
+
+        <div class="process-timeline">
+
+            <div class="process-item slide-left">
+                <div class="process-number">01</div>
+                <div class="process-content">
+                    <h3>Leadership Role Definition & Organizational Mapping</h3>
+                    <p>
+                        We collaborate with founders, board members, and senior stakeholders to define 
+                        leadership expectations, organizational gaps, cultural needs, and long-term strategic goals. 
+                        This ensures clarity on the exact leadership persona required.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-item slide-left">
+                <div class="process-number">02</div>
+                <div class="process-content">
+                    <h3>Market Intelligence & Executive Talent Mapping</h3>
+                    <p>
+                        Our team conducts deep market research including competitor leadership structures, talent 
+                        availability, industry benchmarks, and leadership movement trends. This helps identify where 
+                        the right leaders currently operate and what value they bring.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-item slide-left">
+                <div class="process-number">03</div>
+                <div class="process-content">
+                    <h3>Confidential Executive Search & Outreach</h3>
+                    <p>
+                        Unlike normal hiring, executive search involves targeted headhunting, discreet networking, 
+                        and direct engagement with high-performing leaders who are not actively searching for jobs. 
+                        Absolute confidentiality is maintained throughout.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-item slide-left">
+                <div class="process-number">04</div>
+                <div class="process-content">
+                    <h3>Leadership Evaluation & Strategic Assessment</h3>
+                    <p>
+                        Every shortlisted leader undergoes multi-dimensional evaluation including leadership style, 
+                        transformation capability, strategic vision, P&L ownership experience, and organizational 
+                        culture compatibility to ensure long-term impact.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-item slide-left">
+                <div class="process-number">05</div>
+                <div class="process-content">
+                    <h3>Confidential CXO-Level Interview Coordination</h3>
+                    <p>
+                        We coordinate structured, discreet interview rounds with founders, board members, and 
+                        senior management. This includes business-case evaluations, scenario-based assessments, 
+                        and behavioral or psychometric profiling when required.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-item slide-left">
+                <div class="process-number">06</div>
+                <div class="process-content">
+                    <h3>Offer Structuring, Negotiation & Executive Onboarding</h3>
+                    <p>
+                        We support both the organization and the leader through compensation structuring, ESOP planning, 
+                        negotiation facilitation, transition management, and onboarding alignment to ensure a successful 
+                        leadership integration.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- What Makes Solis Different -->
+    <section class="solis-difference">
+        <div class="container">
+            <h2 class="section-title center white">Why Choose Solis for Leadership Hiring</h2>
+            <p class="section-subtitle center white">We understand that finding a leader is not simply hiring — it's shaping your company's future.</p>
+            
+            <div class="strengths-grid">
+                <div class="strength-card slide-right">
+                    <div class="strength-icon">🎯</div>
+                    <h3>Leadership Expertise</h3>
+                    <p>Deep domain understanding for accurate role matching.</p>
+                </div>
+
+                <div class="strength-card slide-right">
+                    <div class="strength-icon">🌐</div>
+                    <h3>Extensive Talent Network</h3>
+                    <p>Access to senior leaders across industries.</p>
+                </div>
+
+                <div class="strength-card slide-right">
+                    <div class="strength-icon">🔒</div>
+                    <h3>Confidential Search Process</h3>
+                    <p>Ensuring complete privacy for your organization and candidates.</p>
+                </div>
+
+                <div class="strength-card slide-right">
+                    <div class="strength-icon">✓</div>
+                    <h3>Cultural Fit Evaluation</h3>
+                    <p>Matching leaders to your company's values and vision.</p>
+                </div>
+
+                <div class="strength-card slide-right">
+                    <div class="strength-icon">⚡</div>
+                    <h3>Faster, High-Quality Hiring</h3>
+                    <p>Efficient selection without compromising standards.</p>
+                </div>
+
+                <div class="strength-card slide-right">
+                    <div class="strength-icon">📊</div>
+                    <h3>Data-Driven Decision Making</h3>
+                    <p>Behavioral insights, achievement-based evaluation, skill mapping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="industries">
+        <div class="container">
+            <h2 class="section-title center">Leadership Recruitment Across Industries</h2>
+            
+            <div class="industries-grid">
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">💻</div>
+                    <h3>Information Technology</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🚀</div>
+                    <h3>Startups & Tech Companies</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🏭</div>
+                    <h3>Manufacturing</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🏦</div>
+                    <h3>Banking & Finance</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🛒</div>
+                    <h3>Retail</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🏥</div>
+                    <h3>Healthcare</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">📦</div>
+                    <h3>Logistics & Supply Chain</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🎓</div>
+                    <h3>Education & Training</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">💼</div>
+                    <h3>Consulting Firms</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <h2 class="section-title center">Client Success Stories</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Solis helped us find a CTO who transformed our product roadmap. Seamless and professional process.</p>
+                    <div class="testimonial-author">
+                        <strong>— CEO</strong>
+                        <span>Tech Startup</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">The leadership hiring strategy from Solis gave us a VP who improved our operational efficiency drastically.</p>
+                    <div class="testimonial-author">
+                        <strong>— Founder</strong>
+                        <span>E-commerce Platform</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">They understood our culture and found us a perfect-fit HR Head. Highly recommend their leadership services.</p>
+                    <div class="testimonial-author">
+                        <strong>— Managing Director</strong>
+                        <span>Manufacturing Company</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Looking for Visionary Leaders for Your Organization?</h2>
+                <p class="cta-description">
+                    Solis Human Resource Solutions helps you build a leadership team that inspires trust, drives innovation, and accelerates growth.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary pulse">Request Leadership Hiring Support</a>
+                    <a href="#contact" class="btn btn-secondary">Schedule a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+        
+        // CRITICAL FIX: Load header and footer FIRST, then initialize animations
+        let headerLoaded = false;
+        let footerLoaded = false;
+
+        // Load Header
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                headerLoaded = true;
+                checkIfReady();
+            })
+            .catch(error => console.error("Header error:", error));
+
+        // Load Footer
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+                footerLoaded = true;
+                checkIfReady();
+            })
+            .catch(error => console.error("Footer error:", error));
+
+        // Wait for both to load, then initialize animations
+        function checkIfReady() {
+            if (headerLoaded && footerLoaded) {
+                setTimeout(() => {
+                    initializeAllAnimations();
+                }, 150);
+            }
+        }
+        // Custom Cursor
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+let followerX = 0;
+let followerY = 0;
+
+// Update mouse position
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+// Smooth cursor animation
+function animateCursor() {
+    // Cursor dot follows mouse immediately
+    cursorX += (mouseX - cursorX) * 0.3;
+    cursorY += (mouseY - cursorY) * 0.3;
+    
+    // Follower circle lags behind
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
+    
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    
+    cursorFollower.style.left = followerX + 'px';
+    cursorFollower.style.top = followerY + 'px';
+    
+    requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
+// Add active state on click
+document.addEventListener('mousedown', () => {
+    document.body.classList.add('cursor-active');
+});
+
+document.addEventListener('mouseup', () => {
+    document.body.classList.remove('cursor-active');
+});
+
+// Intersection Observer for scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0) translateX(0) scale(1)';
+        }
+    });
+}, observerOptions);
+
+// Observe all animated elements
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll(
+        '.slide-left, .slide-right, .zoom-in, .fade-in'
+    );
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        
+        if (el.classList.contains('slide-left')) {
+            el.style.transform = 'translateX(-50px)';
+        } else if (el.classList.contains('slide-right')) {
+            el.style.transform = 'translateX(50px)';
+        } else if (el.classList.contains('zoom-in')) {
+            el.style.transform = 'scale(0.9)';
+        } else if (el.classList.contains('fade-in')) {
+            el.style.transform = 'translateY(30px)';
+        }
+        
+        el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        observer.observe(el);
+    });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+
+// Add stagger animation delay to grid items
+document.addEventListener('DOMContentLoaded', () => {
+    const grids = [
+        '.roles-grid .role-card',
+        '.strengths-grid .strength-card',
+        '.industries-grid .industry-card',
+        '.testimonials-grid .testimonial-card',
+        '.process-item',
+        '.importance-item'
+    ];
+    
+    grids.forEach(selector => {
+        const items = document.querySelectorAll(selector);
+        items.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
+    });
+});
+
+// Particle animation enhancement
+document.addEventListener('DOMContentLoaded', () => {
+    const particles = document.querySelectorAll('.particle');
+    particles.forEach((particle, index) => {
+        // Random size
+        const size = Math.random() * 8 + 6;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        
+        // Random starting position
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+    });
+});
+    </script>
+</body>
+</html>

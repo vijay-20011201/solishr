@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Solis Human Resource Solutions</title>
+    <meta name="description" content="Build your career with Solis. Connecting talent with the right opportunities across industries.">
+    <style>
+        /* ===== RESET & GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+/* ===== CUSTOM CURSOR ===== */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FF6B35;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: 0.1s;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(0, 71, 171, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: 0.15s;
+    transform: translate(-50%, -50%);
+}
+
+body.cursor-active .cursor {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #0047AB;
+    margin-bottom: 20px;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.section-title.white {
+    color: white;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.section-subtitle.center {
+    text-align: center;
+}
+
+.section-subtitle.white {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.section-description.center {
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #FF6B35, #FF8C61);
+    color: white;
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #0047AB;
+    border: 2px solid #0047AB;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+    }
+    50% {
+        box-shadow: 0 5px 40px rgba(255, 107, 53, 0.6);
+    }
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    height: 100vh;
+    background: 
+        linear-gradient(135deg, rgba(0, 71, 171, 0.9) 0%, rgba(255, 107, 53, 0.9) 100%),
+        url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 107, 53, 0.2) 0%, transparent 50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 1000px;
+    padding: 0 20px;
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* ===== WHY SOLIS SECTION ===== */
+.why-solis {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.benefit-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #0047AB;
+    animation: slideUpAnim 0.8s ease-out;
+}
+
+@keyframes slideUpAnim {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    color: #0047AB;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.benefit-card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ===== CAREER OPPORTUNITIES SECTION ===== */
+.career-opportunities {
+    padding: 100px 0;
+    background: white;
+}
+
+.opportunities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.opportunity-card {
+    background: linear-gradient(135deg, #0047AB, #003380);
+    color: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 71, 171, 0.2);
+    animation: zoomIn 0.8s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.opportunity-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.opportunity-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.opportunity-card p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ===== OPEN POSITIONS SECTION ===== */
+.open-positions {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.positions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.position-category {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.8s ease-out;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #FF6B35;
+}
+
+.category-icon {
+    font-size: 2rem;
+}
+
+.category-header h3 {
+    color: #0047AB;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.position-list {
+    list-style: none;
+    padding: 0;
+}
+
+.position-list li {
+    padding: 12px 0;
+    color: #555;
+    font-size: 1.05rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.position-list li:last-child {
+    border-bottom: none;
+}
+
+.position-list li::before {
+    content: '▸ ';
+    color: #FF6B35;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.position-details {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.position-details h3 {
+    color: #0047AB;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+.details-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.detail-item {
+    background: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: #555;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== HIRING PROCESS SECTION ===== */
+.hiring-process {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0047AB 0%, #003380 100%);
+    color: white;
+}
+
+.process-flow {
+    max-width: 900px;
+    margin: 50px auto 0;
+    position: relative;
+}
+
+.process-flow::before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #FF6B35, rgba(255, 107, 53, 0.3));
+}
+
+.process-step {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    animation: slideLeft 0.8s ease-out;
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #FF6B35, #FF8C61);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+    position: relative;
+    z-index: 2;
+}
+
+.step-content {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.step-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.step-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* ===== FRESHERS & EXPERIENCED SECTION ===== */
+.freshers-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.dual-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.content-block {
+    padding: 40px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.slide-right {
+    animation: slideRight 1s ease-out;
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.content-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.support-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.support-item {
+    color: #555;
+    font-size: 1.05rem;
+    padding: 10px 0;
+}
+
+.roles-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.role-badge {
+    background: #0047AB;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+}
+
+/* ===== JOB ALERTS SECTION ===== */
+.job-alerts {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #FF6B35, #FF8C61);
+    color: white;
+    text-align: center;
+}
+
+.alerts-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.alerts-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.job-alerts .section-title {
+    color: white;
+}
+
+.alerts-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.alert-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+}
+
+.alert-note {
+    font-size: 1.05rem;
+    opacity: 0.95;
+    margin-top: 20px;
+}
+
+/* ===== TESTIMONIALS SECTION ===== */
+.testimonials {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    position: relative;
+    animation: fadeIn 1s ease-out;
+}
+
+.quote-icon {
+    font-size: 4rem;
+    color: #FF6B35;
+    opacity: 0.2;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.testimonial-author strong {
+    display: block;
+    color: #0047AB;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.testimonial-author span {
+    color: #999;
+    font-size: 0.95rem;
+}
+
+/* ===== IMPORTANT INFO SECTION ===== */
+.important-info {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0047AB 0%, #003380 100%);
+    color: white;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.info-icon {
+    font-size: 2rem;
+    color: #FF6B35;
+    flex-shrink: 0;
+}
+
+.info-card p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-section .btn-primary {
+    background: white;
+    color: #FF6B35;
+}
+
+.cta-section .btn-secondary {
+    border-color: white;
+    color: white;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .benefits-grid,
+    .opportunities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .positions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dual-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .benefits-grid,
+    .opportunities-grid,
+    .positions-grid,
+    .testimonials-grid,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-flow::before {
+        left: 30px;
+    }
+    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .alerts-features {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+  </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Build Your Career with Solis</h1>
+            <h2 class="hero-subtitle">Connecting Talent with the Right Opportunities</h2>
+            <p class="hero-description">
+                At Solis Human Resource Solutions, we help individuals build meaningful careers by connecting them with trusted organizations. Whether you are a fresher, experienced professional, leadership candidate, or gig worker, Solis offers opportunities tailored to your skills, ambitions, and work preferences.
+            </p>
+            <div class="cta-buttons">
+                <a href="#open-positions" class="btn btn-primary">Apply for Open Positions</a>
+                <a href="#upload-resume" class="btn btn-secondary">Upload Your Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Solis -->
+    <section class="why-solis">
+        <div class="container">
+            <h2 class="section-title center">Why Choose Solis for Your Career Growth</h2>
+            <p class="section-description center">Solis is not just a hiring platform—we are your career partner. We support candidates throughout the hiring journey, ensuring transparency, guidance, and access to diverse opportunities across industries.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card slide-up">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>One Profile, Multiple Opportunities</h3>
+                    <p>Access diverse job openings with a single profile</p>
+                </div>
+
+                <div class="benefit-card slide-up">
+                    <div class="benefit-icon">✓</div>
+                    <h3>Transparent & Ethical Hiring</h3>
+                    <p>Clear communication and fair selection process</p>
+                </div>
+
+                <div class="benefit-card slide-up">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Career Guidance & Support</h3>
+                    <p>Interview preparation and professional guidance</p>
+                </div>
+
+                <div class="benefit-card slide-up">
+                    <div class="benefit-icon">💼</div>
+                    <h3>Diverse Role Options</h3>
+                    <p>Full-time, contract, leadership, and gig opportunities</p>
+                </div>
+
+                <div class="benefit-card slide-up">
+                    <div class="benefit-icon">🏢</div>
+                    <h3>Reputed Organizations</h3>
+                    <p>Connect with top companies across industries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Opportunities -->
+    <section class="career-opportunities">
+        <div class="container">
+            <h2 class="section-title center">Opportunities for Every Career Stage</h2>
+            <p class="section-subtitle center">Solis provides career opportunities designed for professionals at different stages and with varied work preferences.</p>
+            
+            <div class="opportunities-grid">
+                <div class="opportunity-card zoom-in">
+                    <div class="opportunity-icon">💼</div>
+                    <h3>Full-Time Roles</h3>
+                    <p>Permanent positions across industries</p>
+                </div>
+
+                <div class="opportunity-card zoom-in">
+                    <div class="opportunity-icon">⏰</div>
+                    <h3>Contract & Temporary Roles</h3>
+                    <p>Flexible duration roles</p>
+                </div>
+
+                <div class="opportunity-card zoom-in">
+                    <div class="opportunity-icon">👔</div>
+                    <h3>Leadership Roles</h3>
+                    <p>Senior management and executive hiring</p>
+                </div>
+
+                <div class="opportunity-card zoom-in">
+                    <div class="opportunity-icon">💻</div>
+                    <h3>Gig & Freelance Opportunities</h3>
+                    <p>Project-based and remote work</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions -->
+    <section class="open-positions" id="open-positions">
+        <div class="container">
+            <h2 class="section-title center">Current Open Positions</h2>
+            <p class="section-subtitle center">Explore Active Opportunities Available Right Now</p>
+            <p class="section-description center">Solis collaborates with multiple organizations to offer current job openings across roles, industries, and experience levels. Positions are updated regularly based on client hiring needs.</p>
+            
+            <div class="positions-grid">
+                <div class="position-category fade-in">
+                    <div class="category-header">
+                        <span class="category-icon">💻</span>
+                        <h3>Information Technology (IT)</h3>
+                    </div>
+                    <ul class="position-list">
+                        <li>Software Developer</li>
+                        <li>QA Engineer</li>
+                        <li>Technical Support Executive</li>
+                        <li>System Administrator</li>
+                        <li>UI/UX Designer</li>
+                    </ul>
+                </div>
+
+                <div class="position-category fade-in">
+                    <div class="category-header">
+                        <span class="category-icon">📊</span>
+                        <h3>Business & Operations</h3>
+                    </div>
+                    <ul class="position-list">
+                        <li>Business Analyst</li>
+                        <li>Operations Executive</li>
+                        <li>Process Associate</li>
+                        <li>MIS Executive</li>
+                    </ul>
+                </div>
+
+                <div class="position-category fade-in">
+                    <div class="category-header">
+                        <span class="category-icon">📈</span>
+                        <h3>Sales & Marketing</h3>
+                    </div>
+                    <ul class="position-list">
+                        <li>Digital Marketing Executive</li>
+                        <li>Tele-Sales Associate</li>
+                        <li>Business Development Executive</li>
+                        <li>Sales Coordinator</li>
+                    </ul>
+                </div>
+
+                <div class="position-category fade-in">
+                    <div class="category-header">
+                        <span class="category-icon">💰</span>
+                        <h3>Finance & Accounting</h3>
+                    </div>
+                    <ul class="position-list">
+                        <li>Accounts Executive</li>
+                        <li>Finance Analyst</li>
+                        <li>Billing Specialist</li>
+                    </ul>
+                </div>
+
+                <div class="position-category fade-in">
+                    <div class="category-header">
+                        <span class="category-icon">👥</span>
+                        <h3>HR & Administration</h3>
+                    </div>
+                    <ul class="position-list">
+                        <li>HR Executive</li>
+                        <li>Recruiter / Talent Acquisition</li>
+                        <li>Admin Coordinator</li>
+                    </ul>
+                </div>
+
+                <div class="position-category fade-in">
+                    <div class="category-header">
+                        <span class="category-icon">🎨</span>
+                        <h3>Gig & Freelance Roles</h3>
+                    </div>
+                    <ul class="position-list">
+                        <li>Data Entry Operator</li>
+                        <li>Content Writer</li>
+                        <li>Graphic Designer</li>
+                        <li>Customer Support (Part-Time / Remote)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="position-details">
+                <h3>Position Details Typically Include:</h3>
+                <div class="details-list">
+                    <span class="detail-item">Job role & responsibilities</span>
+                    <span class="detail-item">Required skills & qualifications</span>
+                    <span class="detail-item">Experience level</span>
+                    <span class="detail-item">Employment type (Full-time / Contract / Gig)</span>
+                    <span class="detail-item">Location (On-site / Remote / Hybrid)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hiring Process -->
+    <section class="hiring-process">
+        <div class="container">
+            <h2 class="section-title center white">How the Hiring Process Works</h2>
+            <p class="section-subtitle center white">Our candidate-friendly hiring process ensures clarity and support at every stage.</p>
+            
+            <div class="process-flow">
+                <div class="process-step slide-left">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Profile / Resume Submission</h3>
+                        <p>Submit your details and resume through our platform</p>
+                    </div>
+                </div>
+
+                <div class="process-step slide-left">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Screening & Shortlisting</h3>
+                        <p>Our team reviews and matches your profile with opportunities</p>
+                    </div>
+                </div>
+
+                <div class="process-step slide-left">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Interview Coordination</h3>
+                        <p>We arrange interviews with hiring organizations</p>
+                    </div>
+                </div>
+
+                <div class="process-step slide-left">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Client Interview & Feedback</h3>
+                        <p>Participate in interviews and receive timely feedback</p>
+                    </div>
+                </div>
+
+                <div class="process-step slide-left">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Offer Discussion & Onboarding Support</h3>
+                        <p>We assist with offer negotiation and joining formalities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Freshers Section -->
+    <section class="freshers-section">
+        <div class="container">
+            <div class="dual-content">
+                <div class="content-block slide-right">
+                    <div class="content-icon">🎓</div>
+                    <h2 class="section-title">Starting Your Career Journey?</h2>
+                    <p class="section-description">Solis supports freshers and entry-level professionals by connecting them with learning-oriented employers.</p>
+                    <div class="support-list">
+                        <div class="support-item">✓ Entry-level job opportunities</div>
+                        <div class="support-item">✓ Resume guidance</div>
+                        <div class="support-item">✓ Interview preparation</div>
+                        <div class="support-item">✓ Skill-aligned role matching</div>
+                        <div class="support-item">✓ Career counseling</div>
+                    </div>
+                </div>
+
+                <div class="content-block slide-left">
+                    <div class="content-icon">💼</div>
+                    <h2 class="section-title">Ready to Grow or Switch Your Career?</h2>
+                    <p class="section-description">For experienced professionals, Solis offers roles that align with your domain expertise, growth aspirations, and leadership potential.</p>
+                    <div class="roles-list">
+                        <span class="role-badge">IT & Software</span>
+                        <span class="role-badge">Finance & Accounting</span>
+                        <span class="role-badge">Sales & Marketing</span>
+                        <span class="role-badge">Operations & Support</span>
+                        <span class="role-badge">HR & Administration</span>
+                        <span class="role-badge">Leadership & Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Alerts -->
+    <section class="job-alerts">
+        <div class="container">
+            <div class="alerts-content">
+                <div class="alerts-icon">🔔</div>
+                <h2 class="section-title center">Stay Updated with New Opportunities</h2>
+                <div class="alerts-features">
+                    <div class="alert-feature">
+                        <span class="feature-icon">📧</span>
+                        <span>Job alerts for relevant roles</span>
+                    </div>
+                    <div class="alert-feature">
+                        <span class="feature-icon">📄</span>
+                        <span>Resume update options</span>
+                    </div>
+                    <div class="alert-feature">
+                        <span class="feature-icon">💡</span>
+                        <span>Career guidance notifications</span>
+                    </div>
+                </div>
+                <p class="alert-note">Candidates are encouraged to keep their profiles updated for better matching.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title center">What Candidates Say About Solis</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Solis guided me from resume submission to final selection. Smooth experience.</p>
+                    <div class="testimonial-author">
+                        <strong>— Software Engineer</strong>
+                        <span>Fresher Placement</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">I secured a gig opportunity quickly and the process was transparent.</p>
+                    <div class="testimonial-author">
+                        <strong>— Graphic Designer</strong>
+                        <span>Freelance Role</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Their interview guidance really helped me feel confident.</p>
+                    <div class="testimonial-author">
+                        <strong>— Business Analyst</strong>
+                        <span>Career Switch</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Information -->
+    <section class="important-info">
+        <div class="container">
+            <h2 class="section-title center white">Important Information</h2>
+            
+            <div class="info-grid">
+                <div class="info-card fade-in">
+                    <div class="info-icon">✓</div>
+                    <p>Solis does not charge any fees from candidates</p>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-icon">✓</div>
+                    <p>All communication happens through official Solis channels only</p>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-icon">✓</div>
+                    <p>Resume and profile details must be accurate</p>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-icon">✓</div>
+                    <p>Selection decisions are made by hiring organizations</p>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-icon">✓</div>
+                    <p>Candidate data is handled confidentially</p>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-icon">✓</div>
+                    <p>Response timelines depend on client requirements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Take the Next Step in Your Career</h2>
+                <p class="cta-description">
+                    Whether you're starting your journey, switching roles, or looking for flexible work, Solis Human Resource Solutions is here to support you.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#open-positions" class="btn btn-primary pulse">Apply for Open Positions</a>
+                    <a href="#upload-resume" class="btn btn-secondary" id="upload-resume">Upload Your Resume</a>
+                    <a href="#gig" class="btn btn-secondary">Explore Gig Opportunities</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+        
+        // CRITICAL FIX: Load header and footer FIRST, then initialize animations
+        let headerLoaded = false;
+        let footerLoaded = false;
+
+        // Load Header
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                headerLoaded = true;
+                checkIfReady();
+            })
+            .catch(error => console.error("Header error:", error));
+
+        // Load Footer
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+                footerLoaded = true;
+                checkIfReady();
+            })
+            .catch(error => console.error("Footer error:", error));
+
+        // Wait for both to load, then initialize animations
+        function checkIfReady() {
+            if (headerLoaded && footerLoaded) {
+                setTimeout(() => {
+                    initializeAllAnimations();
+                }, 150);
+            }
+        }
+
+        // Custom Cursor
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+let followerX = 0;
+let followerY = 0;
+
+// Update mouse position
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+// Smooth cursor animation
+function animateCursor() {
+    // Cursor dot follows mouse immediately
+    cursorX += (mouseX - cursorX) * 0.3;
+    cursorY += (mouseY - cursorY) * 0.3;
+    
+    // Follower circle lags behind
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
+    
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    
+    cursorFollower.style.left = followerX + 'px';
+    cursorFollower.style.top = followerY + 'px';
+    
+    requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
+// Add active state on click
+document.addEventListener('mousedown', () => {
+    document.body.classList.add('cursor-active');
+});
+
+document.addEventListener('mouseup', () => {
+    document.body.classList.remove('cursor-active');
+});
+
+// Intersection Observer for scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0) translateX(0) scale(1)';
+        }
+    });
+}, observerOptions);
+
+// Observe all animated elements
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll(
+        '.slide-up, .slide-left, .slide-right, .zoom-in, .fade-in'
+    );
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        
+        if (el.classList.contains('slide-up')) {
+            el.style.transform = 'translateY(30px)';
+        } else if (el.classList.contains('slide-left')) {
+            el.style.transform = 'translateX(-50px)';
+        } else if (el.classList.contains('slide-right')) {
+            el.style.transform = 'translateX(50px)';
+        } else if (el.classList.contains('zoom-in')) {
+            el.style.transform = 'scale(0.9)';
+        } else if (el.classList.contains('fade-in')) {
+            el.style.transform = 'translateY(30px)';
+        }
+        
+        el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        observer.observe(el);
+    });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+
+
+// Add stagger animation delay to grid items
+document.addEventListener('DOMContentLoaded', () => {
+    const grids = [
+        '.benefits-grid .benefit-card',
+        '.opportunities-grid .opportunity-card',
+        '.positions-grid .position-category',
+        '.testimonials-grid .testimonial-card',
+        '.info-grid .info-card',
+        '.process-step'
+    ];
+    
+    grids.forEach(selector => {
+        const items = document.querySelectorAll(selector);
+        items.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
+    });
+});
+
+// Position cards click effect (optional expansion)
+document.addEventListener('DOMContentLoaded', () => {
+    const positionCards = document.querySelectorAll('.position-category');
+    
+    positionCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Remove active class from all cards
+            positionCards.forEach(c => c.classList.remove('active'));
+            // Add active class to clicked card
+            this.classList.add('active');
+        });
+    });
+});
+
+// Scroll progress indicator (optional)
+window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    
+    // You can add a progress bar element in HTML and update it here
+    // For example: document.getElementById('progressBar').style.width = scrolled + '%';
+});
+
+// Highlight current section in navigation (if you add navigation)
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const scrollY = window.pageYOffset;
+    
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            // Add active class to corresponding navigation link if exists
+            document.querySelectorAll(`a[href="#${sectionId}"]`).forEach(link => {
+                link.classList.add('active');
+            });
+        } else {
+            document.querySelectorAll(`a[href="#${sectionId}"]`).forEach(link => {
+                link.classList.remove('active');
+            });
+        }
+    });
+});
+    </script>
+</body>
+</html>

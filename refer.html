@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refer & Earn | Solis Human Resource Solutions</title>
+    <meta name="description" content="Refer talented professionals and earn rewards. Join our referral program today.">
+    <style>
+        /* ===== RESET & GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0047AB;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    background: linear-gradient(135deg, #0047AB 0%, #003380 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.95;
+}
+
+/* ===== HOW IT WORKS SECTION ===== */
+.how-it-works {
+    padding: 80px 0;
+    background: white;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.step-card {
+    background: #f8f9fa;
+    padding: 40px 25px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 71, 171, 0.1);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #FF6B35, #FF8C61);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.step-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.step-card h3 {
+    color: #0047AB;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.step-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ===== REFERRAL FORM SECTION ===== */
+.referral-form-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.form-wrapper {
+    background: white;
+    border-radius: 12px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-description {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.referral-form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.form-section-title {
+    font-size: 1.5rem;
+    color: #0047AB;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.form-row:last-child {
+    margin-bottom: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0047AB;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.file-note {
+    color: #999;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-label {
+    font-weight: 400 !important;
+    margin-bottom: 0 !important;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #0047AB, #003380);
+    color: white;
+    padding: 15px 60px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 71, 171, 0.3);
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===== REWARDS SECTION ===== */
+.rewards-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.reward-card {
+    background: #f8f9fa;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 3px solid transparent;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.reward-card:hover {
+    transform: translateY(-5px);
+    border-color: #0047AB;
+}
+
+.reward-card.featured {
+    background: linear-gradient(135deg, #0047AB, #003380);
+    color: white;
+    border-color: #0047AB;
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #FF6B35, #FF8C61);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.reward-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.reward-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #0047AB;
+}
+
+.reward-card.featured h3 {
+    color: white;
+}
+
+.reward-amount {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FF6B35;
+    margin-bottom: 15px;
+}
+
+.reward-card.featured .reward-amount {
+    color: #FFD700;
+}
+
+.reward-desc {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.reward-card.featured .reward-desc {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.rewards-note {
+    margin-top: 40px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.rewards-note p {
+    margin-bottom: 8px;
+}
+
+/* ===== TERMS SECTION ===== */
+.terms-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.terms-content {
+    max-width: 900px;
+    margin: 40px auto 0;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+.terms-list {
+    list-style: none;
+    padding: 0;
+}
+
+.terms-list li {
+    padding: 15px 0;
+    padding-left: 35px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    color: #555;
+    line-height: 1.7;
+}
+
+.terms-list li:last-child {
+    border-bottom: none;
+}
+
+.terms-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #0047AB;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: white;
+    padding: 50px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    color: #0047AB;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.modal-content p {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn-close {
+    background: linear-gradient(135deg, #0047AB, #003380);
+    color: white;
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-close:hover {
+    transform: scale(1.05);
+}
+
+/* ===== ERROR STYLES ===== */
+.error-message {
+    color: #ff4444;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #ff4444;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rewards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-wrapper {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .rewards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .terms-content {
+        padding: 25px;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .how-it-works,
+    .referral-form-section,
+    .rewards-section,
+    .terms-section {
+        padding: 50px 0;
+    }
+
+    .btn-submit {
+        padding: 12px 40px;
+        font-size: 1rem;
+    }
+
+    .step-card {
+        padding: 30px 20px;
+    }
+
+    .reward-card {
+        padding: 30px 20px;
+    }
+
+    .form-section-title {
+        font-size: 1.3rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Refer & Earn</h1>
+                <p class="hero-subtitle">Help someone find their dream job and earn exciting rewards</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">👤</div>
+                    <h3>Refer a Candidate</h3>
+                    <p>Submit details of talented professionals you know who are looking for opportunities</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">✅</div>
+                    <h3>We Screen & Interview</h3>
+                    <p>Our team evaluates the candidate and matches them with suitable job openings</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">💼</div>
+                    <h3>Candidate Gets Placed</h3>
+                    <p>When your referral successfully joins a company through us</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">🎁</div>
+                    <h3>You Earn Rewards</h3>
+                    <p>Receive your referral bonus once the candidate completes the qualifying period</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Form Section -->
+    <section class="referral-form-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2 class="section-title">Submit Your Referral</h2>
+                    <p class="form-description">Fill in the details of the candidate you'd like to refer</p>
+                </div>
+
+                <form id="referralForm" class="referral-form">
+                    <!-- Your Details -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Your Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="yourName">Your Name *</label>
+                                <input type="text" id="yourName" name="yourName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="yourEmail">Your Email *</label>
+                                <input type="email" id="yourEmail" name="yourEmail" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="yourPhone">Your Phone Number *</label>
+                                <input type="tel" id="yourPhone" name="yourPhone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="yourRelation">Your Relationship with Candidate</label>
+                                <select id="yourRelation" name="yourRelation">
+                                    <option value="">Select</option>
+                                    <option value="friend">Friend</option>
+                                    <option value="colleague">Colleague</option>
+                                    <option value="family">Family Member</option>
+                                    <option value="acquaintance">Acquaintance</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Candidate Details -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Candidate Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="candidateName">Candidate Name *</label>
+                                <input type="text" id="candidateName" name="candidateName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="candidateEmail">Candidate Email *</label>
+                                <input type="email" id="candidateEmail" name="candidateEmail" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="candidatePhone">Candidate Phone *</label>
+                                <input type="tel" id="candidatePhone" name="candidatePhone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="candidateExperience">Total Experience *</label>
+                                <select id="candidateExperience" name="candidateExperience" required>
+                                    <option value="">Select</option>
+                                    <option value="fresher">Fresher</option>
+                                    <option value="0-2">0-2 years</option>
+                                    <option value="2-5">2-5 years</option>
+                                    <option value="5-10">5-10 years</option>
+                                    <option value="10+">10+ years</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="candidateSkills">Key Skills *</label>
+                                <input type="text" id="candidateSkills" name="candidateSkills" placeholder="e.g., Java, Python, Marketing" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="candidateLocation">Preferred Location *</label>
+                                <input type="text" id="candidateLocation" name="candidateLocation" placeholder="e.g., Bangalore, Mumbai" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="candidateResume">Upload Resume (Optional)</label>
+                                <input type="file" id="candidateResume" name="candidateResume" accept=".pdf,.doc,.docx">
+                                <small class="file-note">PDF, DOC, DOCX (Max 5MB)</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Preference -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Job Preference</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jobCategory">Preferred Job Category *</label>
+                                <select id="jobCategory" name="jobCategory" required>
+                                    <option value="">Select</option>
+                                    <option value="it">Information Technology</option>
+                                    <option value="business">Business & Operations</option>
+                                    <option value="sales">Sales & Marketing</option>
+                                    <option value="finance">Finance & Accounting</option>
+                                    <option value="hr">HR & Administration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="jobType">Employment Type *</label>
+                                <select id="jobType" name="jobType" required>
+                                    <option value="">Select</option>
+                                    <option value="fulltime">Full Time</option>
+                                    <option value="contract">Contract</option>
+                                    <option value="parttime">Part Time</option>
+                                    <option value="freelance">Freelance</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Comments -->
+                    <div class="form-section">
+                        <div class="form-group full-width">
+                            <label for="comments">Additional Comments</label>
+                            <textarea id="comments" name="comments" rows="4" placeholder="Any additional information about the candidate..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Terms -->
+                    <div class="form-section">
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms" class="checkbox-label">
+                                I confirm that the candidate is aware of this referral and has consented to share their information *
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Submit Referral</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Section -->
+    <section class="rewards-section">
+        <div class="container">
+            <h2 class="section-title">Referral Rewards</h2>
+            <div class="rewards-grid">
+                <div class="reward-card">
+                    <div class="reward-icon">💰</div>
+                    <h3>Entry Level Positions</h3>
+                    <p class="reward-amount">₹5,000 - ₹10,000</p>
+                    <p class="reward-desc">For freshers and professionals with 0-3 years experience</p>
+                </div>
+                <div class="reward-card featured">
+                    <div class="badge">Most Popular</div>
+                    <div class="reward-icon">💎</div>
+                    <h3>Mid-Level Positions</h3>
+                    <p class="reward-amount">₹10,000 - ₹25,000</p>
+                    <p class="reward-desc">For professionals with 3-8 years experience</p>
+                </div>
+                <div class="reward-card">
+                    <div class="reward-icon">🏆</div>
+                    <h3>Senior & Leadership Roles</h3>
+                    <p class="reward-amount">₹25,000 - ₹50,000+</p>
+                    <p class="reward-desc">For senior positions and leadership roles</p>
+                </div>
+            </div>
+            <div class="rewards-note">
+                <p>* Rewards are paid after the candidate completes 90 days with the hiring organization</p>
+                <p>* Actual reward amount depends on the specific role and client requirements</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms & Conditions -->
+    <section class="terms-section">
+        <div class="container">
+            <h2 class="section-title">Terms & Conditions</h2>
+            <div class="terms-content">
+                <ul class="terms-list">
+                    <li>The candidate must be referred before they apply directly to Solis or the hiring company</li>
+                    <li>Referral rewards are applicable only for successful placements through Solis</li>
+                    <li>The candidate must complete a minimum of 90 days with the hiring organization</li>
+                    <li>Multiple referrals of the same candidate will credit the first referrer only</li>
+                    <li>Solis employees and their immediate family members are not eligible for referral rewards</li>
+                    <li>Rewards will be processed within 30 days after the candidate completes the qualifying period</li>
+                    <li>The candidate must consent to being referred and sharing their information</li>
+                    <li>Solis reserves the right to modify the referral program terms at any time</li>
+                    <li>All tax implications on referral rewards are the responsibility of the referrer</li>
+                    <li>Disputes, if any, will be resolved at Solis management's discretion</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">✅</div>
+            <h2>Referral Submitted Successfully!</h2>
+            <p>Thank you for your referral. Our team will review the candidate's profile and get in touch with them soon.</p>
+            <button class="btn-close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+        // Load Header and Footer
+document.addEventListener('DOMContentLoaded', function() {
+    // Load Header
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+        })
+        .catch(error => console.error("Header error:", error));
+
+    // Load Footer
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        })
+        .catch(error => console.error("Footer error:", error));
+});
+
+// Form Validation and Submission
+document.getElementById('referralForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Validate form
+    if (!validateForm()) {
+        return;
+    }
+    
+    // Get form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Show loading state
+    const submitBtn = this.querySelector('.btn-submit');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Submitting...';
+    submitBtn.disabled = true;
+    
+    // Simulate API call (replace with actual API endpoint)
+    setTimeout(() => {
+        console.log('Form Data:', data);
+        
+        // Reset form
+        this.reset();
+        
+        // Restore button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        
+        // Show success modal
+        showSuccessModal();
+    }, 1500);
+});
+
+// Form Validation
+function validateForm() {
+    const form = document.getElementById('referralForm');
+    let isValid = true;
+    
+    // Check required fields
+    const requiredFields = form.querySelectorAll('[required]');
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            isValid = false;
+            highlightError(field);
+        } else {
+            removeError(field);
+        }
+    });
+    
+    // Validate email format
+    const emailFields = form.querySelectorAll('input[type="email"]');
+    emailFields.forEach(field => {
+        if (field.value && !isValidEmail(field.value)) {
+            isValid = false;
+            highlightError(field, 'Please enter a valid email address');
+        }
+    });
+    
+    // Validate phone format
+    const phoneFields = form.querySelectorAll('input[type="tel"]');
+    phoneFields.forEach(field => {
+        if (field.value && !isValidPhone(field.value)) {
+            isValid = false;
+            highlightError(field, 'Please enter a valid phone number');
+        }
+    });
+    
+    // Validate file size if file is uploaded
+    const fileInput = document.getElementById('candidateResume');
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const maxSize = 5 * 1024 * 1024; // 5MB
+        
+        if (file.size > maxSize) {
+            isValid = false;
+            highlightError(fileInput, 'File size must be less than 5MB');
+        }
+    }
+    
+    if (!isValid) {
+        // Scroll to first error
+        const firstError = form.querySelector('.error');
+        if (firstError) {
+            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+    
+    return isValid;
+}
+
+// Email validation
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Phone validation (Indian format)
+function isValidPhone(phone) {
+    const phoneRegex = /^[6-9]\d{9}$/;
+    const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+    return phoneRegex.test(cleanPhone);
+}
+
+// Highlight error field
+function highlightError(field, message = 'This field is required') {
+    field.classList.add('error');
+    field.style.borderColor = '#ff4444';
+    
+    // Remove existing error message
+    const existingError = field.parentElement.querySelector('.error-message');
+    if (existingError) {
+        existingError.remove();
+    }
+    
+    // Add error message
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.style.color = '#ff4444';
+    errorDiv.style.fontSize = '0.85rem';
+    errorDiv.style.marginTop = '5px';
+    errorDiv.textContent = message;
+    field.parentElement.appendChild(errorDiv);
+}
+
+// Remove error styling
+function removeError(field) {
+    field.classList.remove('error');
+    field.style.borderColor = '#e0e0e0';
+    
+    const errorMessage = field.parentElement.querySelector('.error-message');
+    if (errorMessage) {
+        errorMessage.remove();
+    }
+}
+
+// Real-time validation
+document.querySelectorAll('input, select, textarea').forEach(field => {
+    field.addEventListener('blur', function() {
+        if (this.hasAttribute('required') && !this.value.trim()) {
+            highlightError(this);
+        } else if (this.type === 'email' && this.value && !isValidEmail(this.value)) {
+            highlightError(this, 'Please enter a valid email address');
+        } else if (this.type === 'tel' && this.value && !isValidPhone(this.value)) {
+            highlightError(this, 'Please enter a valid phone number');
+        } else {
+            removeError(this);
+        }
+    });
+    
+    field.addEventListener('input', function() {
+        if (this.classList.contains('error')) {
+            removeError(this);
+        }
+    });
+});
+
+// Show success modal
+function showSuccessModal() {
+    const modal = document.getElementById('successModal');
+    modal.classList.add('show');
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+}
+
+// Close modal
+function closeModal() {
+    const modal = document.getElementById('successModal');
+    modal.classList.remove('show');
+    
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal on outside click
+document.getElementById('successModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// File input display
+document.getElementById('candidateResume').addEventListener('change', function(e) {
+    const fileName = e.target.files[0]?.name;
+    if (fileName) {
+        const fileNote = this.parentElement.querySelector('.file-note');
+        fileNote.textContent = `Selected: ${fileName}`;
+        fileNote.style.color = '#0047AB';
+    }
+});
+
+// Smooth scroll for anchor links
+document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href')?.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(e.target.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
+});
+
+// Auto-format phone numbers
+document.querySelectorAll('input[type="tel"]').forEach(input => {
+    input.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length > 10) {
+            value = value.substring(0, 10);
+        }
+        e.target.value = value;
+    });
+});
+
+// Prevent form submission on Enter key (except in textarea)
+document.getElementById('referralForm').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+    }
+});
+
+// Add animation on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe all cards
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.step-card, .reward-card');
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease-out';
+        observer.observe(card);
+    });
+});
+    </script>
+</body>
+</html>

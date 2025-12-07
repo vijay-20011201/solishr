@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staffing Solutions | Solis Human Resource Solutions</title>
+    <meta name="description" content="Flexible staffing solutions for a dynamic workforce. Contract, temporary, and permanent staffing tailored to your business needs.">
+    <link rel="stylesheet" href="staffing.css">
+    <style>
+        /* ===== RESET & GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+/* ===== CUSTOM CURSOR ===== */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FF6B35;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: 0.1s;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(0, 71, 171, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: 0.15s;
+    transform: translate(-50%, -50%);
+}
+
+body.cursor-active .cursor {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #0047AB;
+    margin-bottom: 20px;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.section-title.white {
+    color: white;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.8;
+}
+
+.section-subtitle.center {
+    text-align: center;
+}
+
+.section-subtitle.white {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #FF6B35, #FF8C61);
+    color: white;
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #0047AB;
+    border: 2px solid #0047AB;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    height: 100vh;
+    background: 
+        linear-gradient(135deg, rgba(0, 71, 171, 0.85) 0%, rgba(255, 107, 53, 0.85) 100%),
+        url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.2) 0%, transparent 50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 1000px;
+    padding: 0 20px;
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Floating Shapes */
+.floating-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 10%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    right: 15%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    bottom: 15%;
+    left: 20%;
+    animation: float 7s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+}
+
+/* ===== WHAT IS STAFFING SECTION ===== */
+.what-is-staffing {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+/* FORCE FIX - What is Staffing Section */
+.what-is-staffing * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+.what-is-staffing .text-content,
+.what-is-staffing .slide-left {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.section-description {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.highlights {
+    display: grid;
+    gap: 15px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.highlight-item .icon {
+    font-size: 1.5rem;
+    color: #FF6B35;
+}
+
+.image-content img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== STAFFING TYPES SECTION ===== */
+.staffing-types {
+    padding: 100px 0;
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #0047AB;
+    animation: zoomIn 0.8s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #FF6B35;
+    opacity: 0.3;
+}
+
+.service-card h3 {
+    font-size: 1.6rem;
+    color: #0047AB;
+    margin: 0;
+}
+
+.card-description {
+    font-size: 1.05rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.card-details h4 {
+    color: #0047AB;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.card-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card-details ul li {
+    padding: 8px 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* ===== WHY CHOOSE SECTION ===== */
+.why-choose {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0047AB 0%, #003380 100%);
+    color: white;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.advantage-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideRight 1s ease-out;
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.advantage-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.advantage-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.advantage-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ===== STAFFING PROCESS SECTION ===== */
+.staffing-process {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.timeline {
+    max-width: 900px;
+    margin: 50px auto 0;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #0047AB, #FF6B35);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    animation: slideLeft 0.8s ease-out;
+}
+
+.timeline-number {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #0047AB, #FF6B35);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    box-shadow: 0 5px 20px rgba(0, 71, 171, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-content {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-content h3 {
+    color: #0047AB;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* ===== INDUSTRIES SECTION ===== */
+.industries {
+    padding: 100px 0;
+    background: white;
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.industry-card {
+    background: #f8f9fa;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.industry-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.industry-card h3 {
+    color: #0047AB;
+    font-size: 1.2rem;
+}
+
+/* ===== TESTIMONIALS SECTION ===== */
+.testimonials {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    position: relative;
+    animation: fadeIn 1s ease-out;
+}
+
+.quote-icon {
+    font-size: 4rem;
+    color: #FF6B35;
+    opacity: 0.2;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.testimonial-author strong {
+    display: block;
+    color: #0047AB;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.testimonial-author span {
+    color: #999;
+    font-size: 0.95rem;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-section .btn-primary {
+    background: white;
+    color: #FF6B35;
+}
+
+.cta-section .btn-secondary {
+    border-color: white;
+    color: white;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 5px 40px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .services-grid,
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .industries-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid,
+    .advantages-grid,
+    .industries-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+</style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Flexible Staffing Solutions for a Dynamic Workforce</h1>
+            <h2 class="hero-subtitle">Contract, Temporary, and Permanent Staffing Tailored to Your Business Needs</h2>
+            <p class="hero-description">
+                Solis Human Resource Solutions delivers reliable staffing services to support organizations during peak workloads, seasonal demands, and long-term expansion. Our staffing model is designed to ensure you get the right talent, at the right time, with the right skill set.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Request Staffing Support</a>
+                <a href="#contact" class="btn btn-secondary">Speak to a Staffing Expert</a>
+            </div>
+        </div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- What is Staffing Section -->
+    <section class="what-is-staffing">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <h2 class="section-title">What Staffing Means at Solis</h2>
+                    <p class="section-description">
+                        Staffing is more than providing employees; it is delivering workforce flexibility, efficiency, and dependability. Solis offers scalable staffing models to meet your immediate and long-term business goals.
+                    </p>
+                    <div class="highlights">
+                        <div class="highlight-item">
+                            <span class="icon">⚡</span>
+                            <span>Quick deployment of talent</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="icon">✓</span>
+                            <span>Verified and pre-screened candidates</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="icon">🎯</span>
+                            <span>Industry-specific workforce</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="icon">📋</span>
+                            <span>Flexible contracts</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Business Meeting">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types of Staffing Services -->
+    <section class="staffing-types">
+        <div class="container">
+            <h2 class="section-title center">Comprehensive Staffing Solutions</h2>
+            <p class="section-subtitle center">Our staffing offerings are built to support organizations of all sizes—from startups to large enterprises.</p>
+            
+            <div class="services-grid">
+                <div class="service-card zoom-in">
+                    <div class="card-header">
+                        <span class="card-number">01</span>
+                        <h3>Temporary Staffing</h3>
+                    </div>
+                    <p class="card-description">Short-term employees for peak workloads, special projects, and seasonal requirements.</p>
+                    <div class="card-details">
+                        <h4>Ideal For:</h4>
+                        <ul>
+                            <li>✔ Retail</li>
+                            <li>✔ Manufacturing</li>
+                            <li>✔ Events</li>
+                            <li>✔ Logistics</li>
+                            <li>✔ Administrative roles</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card zoom-in">
+                    <div class="card-header">
+                        <span class="card-number">02</span>
+                        <h3>Contract Staffing</h3>
+                    </div>
+                    <p class="card-description">Skilled professionals hired on a fixed-term contract.</p>
+                    <div class="card-details">
+                        <h4>Benefits:</h4>
+                        <ul>
+                            <li>✔ No long-term commitments</li>
+                            <li>✔ Faster hiring</li>
+                            <li>✔ Payroll handled by Solis</li>
+                            <li>✔ Cost-effective</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card zoom-in">
+                    <div class="card-header">
+                        <span class="card-number">03</span>
+                        <h3>Permanent Staffing</h3>
+                    </div>
+                    <p class="card-description">Full-time employees recruited and placed to support business growth.</p>
+                    <div class="card-details">
+                        <h4>Benefits:</h4>
+                        <ul>
+                            <li>✔ Quality candidates</li>
+                            <li>✔ Role-based assessment</li>
+                            <li>✔ Industry-relevant matchmaking</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card zoom-in">
+                    <div class="card-header">
+                        <span class="card-number">04</span>
+                        <h3>Project-Based Staffing</h3>
+                    </div>
+                    <p class="card-description">Teams assigned for specific business goals or projects.</p>
+                    <div class="card-details">
+                        <h4>Great For:</h4>
+                        <ul>
+                            <li>✔ IT projects</li>
+                            <li>✔ Product launches</li>
+                            <li>✔ Support campaigns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Solis -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title center white">Why Businesses Trust Solis</h2>
+            <p class="section-subtitle center white">We understand the importance of a reliable workforce. That's why our staffing solutions focus on speed, skill, and sustainability.</p>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">⚡</div>
+                    <h3>Fast Turnaround Time</h3>
+                    <p>Rapid hiring to reduce delays</p>
+                </div>
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">✓</div>
+                    <h3>Verified Workforce</h3>
+                    <p>Background checks and skill validation</p>
+                </div>
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">📋</div>
+                    <h3>Flexible Contracts</h3>
+                    <p>Tailored to project duration and budgets</p>
+                </div>
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">🎯</div>
+                    <h3>Industry Expertise</h3>
+                    <p>Staffing for IT, manufacturing, retail, logistics, BPO, healthcare, and more</p>
+                </div>
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">💼</div>
+                    <h3>Payroll & Compliance</h3>
+                    <p>We manage payroll, attendance, and statutory compliance</p>
+                </div>
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">🚀</div>
+                    <h3>Reduced Hiring Burden</h3>
+                    <p>You focus on business, we handle workforce</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staffing Process -->
+    <section class="staffing-process">
+        <div class="container">
+            <h2 class="section-title center">Our Staffing Process</h2>
+            <p class="section-subtitle center">A transparent staffing method that ensures a smooth experience from request to onboarding.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item slide-left">
+                    <div class="timeline-number">01</div>
+                    <div class="timeline-content">
+                        <h3>Requirement Understanding</h3>
+                        <p>We discuss job roles, duration, skills, budget, and expectations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-left">
+                    <div class="timeline-number">02</div>
+                    <div class="timeline-content">
+                        <h3>Talent Sourcing & Screening</h3>
+                        <p>We shortlist candidates through qualification checks and industry filters.</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-left">
+                    <div class="timeline-number">03</div>
+                    <div class="timeline-content">
+                        <h3>Candidate Selection</h3>
+                        <p>You choose from vetted profiles.</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-left">
+                    <div class="timeline-number">04</div>
+                    <div class="timeline-content">
+                        <h3>Deployment</h3>
+                        <p>Candidates join your team promptly.</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-left">
+                    <div class="timeline-number">05</div>
+                    <div class="timeline-content">
+                        <h3>Payroll & Compliance Management</h3>
+                        <p>Solis manages documentation, payments, compliance, and employee relations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-left">
+                    <div class="timeline-number">06</div>
+                    <div class="timeline-content">
+                        <h3>Performance Monitoring</h3>
+                        <p>Regular assessments ensure high-quality service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve -->
+    <section class="industries">
+        <div class="container">
+            <h2 class="section-title center">Industries Supported Through Staffing</h2>
+            <p class="section-subtitle center">Our staffing expertise covers multiple sectors ensuring domain-focused workforce support.</p>
+            
+            <div class="industries-grid">
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">💻</div>
+                    <h3>Information Technology</h3>
+                </div>
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">📞</div>
+                    <h3>BPO & Customer Support</h3>
+                </div>
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🛒</div>
+                    <h3>Retail</h3>
+                </div>
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🏭</div>
+                    <h3>Manufacturing</h3>
+                </div>
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">📦</div>
+                    <h3>Logistics & Warehousing</h3>
+                </div>
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🏥</div>
+                    <h3>Healthcare</h3>
+                </div>
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">💰</div>
+                    <h3>Finance & Accounting</h3>
+                </div>
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">📊</div>
+                    <h3>Sales & Marketing</h3>
+                </div>
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🏨</div>
+                    <h3>Hospitality</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title center">Trusted by Companies Across Industries</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Solis provided us with reliable temporary staff during our seasonal rush. Highly professional team.</p>
+                    <div class="testimonial-author">
+                        <strong>— Operations Manager</strong>
+                        <span>Retail Company</span>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Contract staffing helped us manage projects efficiently without overextending budgets.</p>
+                    <div class="testimonial-author">
+                        <strong>— Project Director</strong>
+                        <span>IT Firm</span>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Solis manages payroll and compliance so smoothly that it's a huge relief for our HR team.</p>
+                    <div class="testimonial-author">
+                        <strong>— HR Head</strong>
+                        <span>Manufacturing Unit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Need Skilled Staff for Your Business?</h2>
+                <p class="cta-description">
+                    Solis Human Resource Solutions provides efficient, cost-effective staffing services that scale with your business. Whether you need temporary, contract, or permanent workforce, we're here to support.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary pulse">Request Staffing Support</a>
+                    <a href="#contact" class="btn btn-secondary">Speak to a Staffing Expert</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+// CRITICAL FIX: Load header and footer FIRST, then initialize animations
+let headerLoaded = false;
+let footerLoaded = false;
+
+// Load Header
+fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("header").innerHTML = data;
+        headerLoaded = true;
+        checkIfReady();
+    })
+    .catch(error => console.error("Header error:", error));
+
+// Load Footer
+fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer").innerHTML = data;
+        footerLoaded = true;
+        checkIfReady();
+    })
+    .catch(error => console.error("Footer error:", error));
+
+// Wait for both to load, then initialize animations
+function checkIfReady() {
+    if (headerLoaded && footerLoaded) {
+        setTimeout(() => {
+            initializeAllAnimations();
+        }, 150);
+    }
+}
+
+function initializeAllAnimations() {
+    // Custom Cursor
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+    let followerX = 0;
+    let followerY = 0;
+
+    // Update mouse position
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Smooth cursor animation
+    function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.3;
+        cursorY += (mouseY - cursorY) * 0.3;
+        
+        followerX += (mouseX - followerX) * 0.1;
+        followerY += (mouseY - followerY) * 0.1;
+        
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        
+        cursorFollower.style.left = followerX + 'px';
+        cursorFollower.style.top = followerY + 'px';
+        
+        requestAnimationFrame(animateCursor);
+    }
+
+    animateCursor();
+
+    // Add active state on click
+    document.addEventListener('mousedown', () => {
+        document.body.classList.add('cursor-active');
+    });
+
+    document.addEventListener('mouseup', () => {
+        document.body.classList.remove('cursor-active');
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) translateX(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe animated elements BUT EXCLUDE what-is-staffing section
+    const animatedElements = document.querySelectorAll(
+        '.slide-left, .slide-right, .zoom-in, .fade-in'
+    );
+    
+    animatedElements.forEach(el => {
+        // SKIP elements inside what-is-staffing section
+        if (el.closest('.what-is-staffing')) {
+            return; // Don't animate this element
+        }
+        
+        el.style.opacity = '0';
+        
+        if (el.classList.contains('slide-left')) {
+            el.style.transform = 'translateX(-50px)';
+        } else if (el.classList.contains('slide-right')) {
+            el.style.transform = 'translateX(50px)';
+        } else if (el.classList.contains('zoom-in')) {
+            el.style.transform = 'scale(0.9)';
+        } else if (el.classList.contains('fade-in')) {
+            el.style.transform = 'translateY(30px)';
+        }
+        
+        el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        observer.observe(el);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    
+
+    // Add stagger animation delay to grid items (EXCLUDE what-is-staffing)
+    const grids = [
+        '.services-grid .service-card',
+        '.advantages-grid .advantage-card',
+        '.industries-grid .industry-card',
+        '.testimonials-grid .testimonial-card',
+        '.timeline-item'
+    ];
+    
+    grids.forEach(selector => {
+        const items = document.querySelectorAll(selector);
+        items.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
+    });
+}
+</script>
+</body>
+</html>

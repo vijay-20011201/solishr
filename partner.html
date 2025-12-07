@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner With Us | Solis Human Resource Solutions</title>
+    <meta name="description" content="Partner with Solis for reliable recruitment and staffing solutions. Let us help you build your dream team.">
+    <style>
+        /* ===== RESET & GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0047AB;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-description {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    background: linear-gradient(135deg, #0047AB 0%, #003380 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.95;
+}
+
+/* ===== WHY PARTNER SECTION ===== */
+.why-partner {
+    padding: 80px 0;
+    background: white;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.benefit-card {
+    background: #f8f9fa;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid #0047AB;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 71, 171, 0.15);
+}
+
+.benefit-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    color: #0047AB;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.benefit-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ===== SERVICES SECTION ===== */
+.services-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 71, 171, 0.15);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: #0047AB;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.service-card > p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+}
+
+.service-features li {
+    color: #555;
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #FF6B35;
+    font-weight: 700;
+}
+
+/* ===== INDUSTRIES SECTION ===== */
+.industries-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.industry-card {
+    background: linear-gradient(135deg, #0047AB, #003380);
+    color: white;
+    padding: 25px 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: default;
+}
+
+.industry-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 71, 171, 0.3);
+}
+
+/* ===== PARTNERSHIP FORM SECTION ===== */
+.partnership-form-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.form-wrapper {
+    background: white;
+    border-radius: 12px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-description {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.partnership-form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.form-section-title {
+    font-size: 1.5rem;
+    color: #0047AB;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.form-row:last-child {
+    margin-bottom: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.form-group select,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0047AB;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-label {
+    font-weight: 400 !important;
+    margin-bottom: 0 !important;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #0047AB, #003380);
+    color: white;
+    padding: 15px 60px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 71, 171, 0.3);
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===== PROCESS SECTION ===== */
+.process-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.process-timeline {
+    max-width: 900px;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.process-step {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #FF6B35, #FF8C61);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+.step-content {
+    flex: 1;
+    padding-top: 5px;
+}
+
+.step-content h3 {
+    color: #0047AB;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.step-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ===== TESTIMONIALS SECTION ===== */
+.testimonials-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.quote-icon {
+    font-size: 3rem;
+    color: #FF6B35;
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    font-style: italic;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.testimonial-author strong {
+    display: block;
+    color: #0047AB;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.testimonial-author span {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #FF6B35, #FF8C61);
+    color: white;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: white;
+    color: #FF6B35;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #FF6B35;
+}
+
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s;
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: white;
+    padding: 50px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    animation: slideUp 0.3s;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.modal-content h2 {
+    color: #0047AB;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.modal-content p {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn-close {
+    background: linear-gradient(135deg, #0047AB, #003380);
+    color: white;
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-close:hover {
+    transform: scale(1.05);
+}
+
+/* ===== ERROR STYLES ===== */
+.error-message {
+    color: #ff4444;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #ff4444;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .industries-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .industries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-wrapper {
+        padding: 30px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .process-step {
+        gap: 20px;
+    }
+
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-title {
+        font-size: 1.8rem;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .why-partner,
+    .services-section,
+    .industries-section,
+    .partnership-form-section,
+    .process-section,
+    .testimonials-section,
+    .cta-section {
+        padding: 50px 0;
+    }
+
+    .industries-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-submit {
+        padding: 12px 40px;
+        font-size: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .benefit-card,
+    .service-card,
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+
+    .form-section-title {
+        font-size: 1.3rem;
+    }
+
+    .step-content h3 {
+        font-size: 1.1rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Partner With Us</h1>
+                <p class="hero-subtitle">Build your dream team with India's trusted HR solutions partner</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Partner Section -->
+    <section class="why-partner">
+        <div class="container">
+            <h2 class="section-title">Why Partner with Solis?</h2>
+            <p class="section-description">We provide end-to-end recruitment solutions tailored to your business needs</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Quality Talent Pool</h3>
+                    <p>Access to pre-screened, qualified candidates across industries</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Fast Turnaround</h3>
+                    <p>Quick hiring process with shortlisted candidates in 48-72 hours</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💼</div>
+                    <h3>Flexible Solutions</h3>
+                    <p>Full-time, contract, temporary, and leadership hiring options</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">✓</div>
+                    <h3>End-to-End Support</h3>
+                    <p>From job posting to onboarding, we handle everything</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Cost-Effective</h3>
+                    <p>Competitive pricing with transparent fee structure</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Dedicated Support</h3>
+                    <p>Personal account manager for seamless coordination</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Permanent Staffing</h3>
+                    <p>Full-time hiring solutions for all levels - entry, mid, and senior positions</p>
+                    <ul class="service-features">
+                        <li>Executive search</li>
+                        <li>Mid-level hiring</li>
+                        <li>Entry-level recruitment</li>
+                        <li>Leadership positions</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⏰</div>
+                    <h3>Contract Staffing</h3>
+                    <p>Flexible workforce solutions for project-based or seasonal requirements</p>
+                    <ul class="service-features">
+                        <li>Project-based hiring</li>
+                        <li>Seasonal workforce</li>
+                        <li>Contract-to-hire</li>
+                        <li>Short-term positions</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>Temporary Staffing</h3>
+                    <p>On-demand temporary workforce for immediate business needs</p>
+                    <ul class="service-features">
+                        <li>Immediate placements</li>
+                        <li>Cover for leaves</li>
+                        <li>Peak season support</li>
+                        <li>Flexible duration</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>Campus Recruitment</h3>
+                    <p>Direct access to fresh talent from premier educational institutions</p>
+                    <ul class="service-features">
+                        <li>College tie-ups</li>
+                        <li>Fresher hiring</li>
+                        <li>Internship programs</li>
+                        <li>Training support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries-section">
+        <div class="container">
+            <h2 class="section-title">Industries We Serve</h2>
+            <div class="industries-grid">
+                <div class="industry-card">💻 IT & Technology</div>
+                <div class="industry-card">🏭 Manufacturing</div>
+                <div class="industry-card">🏥 Healthcare</div>
+                <div class="industry-card">🏦 Banking & Finance</div>
+                <div class="industry-card">📱 E-commerce</div>
+                <div class="industry-card">🎓 Education</div>
+                <div class="industry-card">🏗️ Construction</div>
+                <div class="industry-card">🛒 Retail</div>
+                <div class="industry-card">📞 BPO & KPO</div>
+                <div class="industry-card">🚗 Automotive</div>
+                <div class="industry-card">✈️ Hospitality</div>
+                <div class="industry-card">📊 Consulting</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Form Section -->
+    <section class="partnership-form-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2 class="section-title">Start Your Partnership Journey</h2>
+                    <p class="form-description">Fill in your details and our team will reach out within 24 hours</p>
+                </div>
+
+                <form id="partnershipForm" class="partnership-form">
+                    <!-- Company Details -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Company Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="companyName">Company Name *</label>
+                                <input type="text" id="companyName" name="companyName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="industry">Industry *</label>
+                                <select id="industry" name="industry" required>
+                                    <option value="">Select Industry</option>
+                                    <option value="it">IT & Technology</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="finance">Banking & Finance</option>
+                                    <option value="ecommerce">E-commerce</option>
+                                    <option value="education">Education</option>
+                                    <option value="construction">Construction</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="bpo">BPO & KPO</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="companySize">Company Size *</label>
+                                <select id="companySize" name="companySize" required>
+                                    <option value="">Select Size</option>
+                                    <option value="1-10">1-10 employees</option>
+                                    <option value="11-50">11-50 employees</option>
+                                    <option value="51-200">51-200 employees</option>
+                                    <option value="201-500">201-500 employees</option>
+                                    <option value="500+">500+ employees</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="companyLocation">Company Location *</label>
+                                <input type="text" id="companyLocation" name="companyLocation" placeholder="City, State" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="website">Company Website</label>
+                                <input type="url" id="website" name="website" placeholder="https://www.example.com">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Person Details -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Contact Person Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Full Name *</label>
+                                <input type="text" id="contactName" name="contactName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="designation">Designation *</label>
+                                <input type="text" id="designation" name="designation" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address *</label>
+                                <input type="email" id="contactEmail" name="contactEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone">Phone Number *</label>
+                                <input type="tel" id="contactPhone" name="contactPhone" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hiring Requirements -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Hiring Requirements</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="serviceType">Service Required *</label>
+                                <select id="serviceType" name="serviceType" required>
+                                    <option value="">Select Service</option>
+                                    <option value="permanent">Permanent Staffing</option>
+                                    <option value="contract">Contract Staffing</option>
+                                    <option value="temporary">Temporary Staffing</option>
+                                    <option value="campus">Campus Recruitment</option>
+                                    <option value="multiple">Multiple Services</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="hiringVolume">Expected Hiring Volume *</label>
+                                <select id="hiringVolume" name="hiringVolume" required>
+                                    <option value="">Select Volume</option>
+                                    <option value="1-5">1-5 positions</option>
+                                    <option value="6-10">6-10 positions</option>
+                                    <option value="11-25">11-25 positions</option>
+                                    <option value="25+">25+ positions</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="positions">Positions to Hire</label>
+                                <input type="text" id="positions" name="positions" placeholder="e.g., Software Developer, Sales Manager, HR Executive">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="requirements">Additional Requirements</label>
+                                <textarea id="requirements" name="requirements" rows="4" placeholder="Any specific requirements or details about your hiring needs..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms -->
+                    <div class="form-section">
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms" class="checkbox-label">
+                                I agree to receive communications from Solis Human Resource Solutions regarding partnership opportunities *
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Submit Partnership Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">Our Partnership Process</h2>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Initial Consultation</h3>
+                        <p>We understand your hiring needs and business requirements</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Strategy Development</h3>
+                        <p>Create a customized recruitment strategy for your organization</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Candidate Sourcing</h3>
+                        <p>Source and screen qualified candidates from our talent pool</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Interview Coordination</h3>
+                        <p>Schedule interviews and facilitate the selection process</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Onboarding Support</h3>
+                        <p>Assist with offer management and smooth onboarding</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Partners Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Solis helped us scale our tech team rapidly. Their understanding of our requirements and quick turnaround was impressive.</p>
+                    <div class="testimonial-author">
+                        <strong>Rajesh Kumar</strong>
+                        <span>CTO, Tech Solutions Ltd</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">We've been partnering with Solis for 2 years. Their quality of candidates and professionalism is consistently excellent.</p>
+                    <div class="testimonial-author">
+                        <strong>Priya Sharma</strong>
+                        <span>HR Director, Manufacturing Corp</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">The contract staffing solution from Solis gave us the flexibility we needed for our project-based work.</p>
+                    <div class="testimonial-author">
+                        <strong>Amit Patel</strong>
+                        <span>Operations Manager, Retail Chain</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Build Your Dream Team?</h2>
+            <p class="cta-description">Let's discuss how we can help you achieve your hiring goals</p>
+            <div class="cta-buttons">
+                <a href="#partnership-form" class="btn-primary">Get Started</a>
+                <a href="tel:+919876543210" class="btn-secondary">Call Us Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">✅</div>
+            <h2>Partnership Request Submitted!</h2>
+            <p>Thank you for your interest in partnering with Solis. Our team will review your request and contact you within 24 hours.</p>
+            <button class="btn-close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+        // Load Header and Footer
+document.addEventListener('DOMContentLoaded', function() {
+    // Load Header
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+        })
+        .catch(error => console.error("Header error:", error));
+
+    // Load Footer
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        })
+        .catch(error => console.error("Footer error:", error));
+
+    // Initialize animations
+    initScrollAnimations();
+});
+
+// Form Validation and Submission
+document.getElementById('partnershipForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Validate form
+    if (!validateForm()) {
+        return;
+    }
+    
+    // Get form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Show loading state
+    const submitBtn = this.querySelector('.btn-submit');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Submitting...';
+    submitBtn.disabled = true;
+    
+    // Simulate API call (replace with actual API endpoint)
+    setTimeout(() => {
+        console.log('Form Data:', data);
+        
+        // Reset form
+        this.reset();
+        
+        // Restore button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        
+        // Show success modal
+        showSuccessModal();
+    }, 1500);
+});
+
+// Form Validation
+function validateForm() {
+    const form = document.getElementById('partnershipForm');
+    let isValid = true;
+    
+    // Check required fields
+    const requiredFields = form.querySelectorAll('[required]');
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            isValid = false;
+            highlightError(field);
+        } else {
+            removeError(field);
+        }
+    });
+    
+    // Validate email format
+    const emailField = document.getElementById('contactEmail');
+    if (emailField.value && !isValidEmail(emailField.value)) {
+        isValid = false;
+        highlightError(emailField, 'Please enter a valid email address');
+    }
+    
+    // Validate phone format
+    const phoneField = document.getElementById('contactPhone');
+    if (phoneField.value && !isValidPhone(phoneField.value)) {
+        isValid = false;
+        highlightError(phoneField, 'Please enter a valid phone number');
+    }
+    
+    // Validate URL format if provided
+    const websiteField = document.getElementById('website');
+    if (websiteField.value && !isValidURL(websiteField.value)) {
+        isValid = false;
+        highlightError(websiteField, 'Please enter a valid URL (e.g., https://www.example.com)');
+    }
+    
+    if (!isValid) {
+        // Scroll to first error
+        const firstError = form.querySelector('.error');
+        if (firstError) {
+            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+    
+    return isValid;
+}
+
+// Email validation
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Phone validation (Indian format)
+function isValidPhone(phone) {
+    const phoneRegex = /^[6-9]\d{9}$/;
+    const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+    return phoneRegex.test(cleanPhone);
+}
+
+// URL validation
+function isValidURL(url) {
+    try {
+        const urlObj = new URL(url);
+        return urlObj.protocol === 'http:' || urlObj.protocol === 'https:';
+    } catch (e) {
+        return false;
+    }
+}
+
+// Highlight error field
+function highlightError(field, message = 'This field is required') {
+    field.classList.add('error');
+    field.style.borderColor = '#ff4444';
+    
+    // Remove existing error message
+    const existingError = field.parentElement.querySelector('.error-message');
+    if (existingError) {
+        existingError.remove();
+    }
+    
+    // Add error message
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.style.color = '#ff4444';
+    errorDiv.style.fontSize = '0.85rem';
+    errorDiv.style.marginTop = '5px';
+    errorDiv.textContent = message;
+    field.parentElement.appendChild(errorDiv);
+}
+
+// Remove error styling
+function removeError(field) {
+    field.classList.remove('error');
+    field.style.borderColor = '#e0e0e0';
+    
+    const errorMessage = field.parentElement.querySelector('.error-message');
+    if (errorMessage) {
+        errorMessage.remove();
+    }
+}
+
+// Real-time validation
+document.querySelectorAll('input, select, textarea').forEach(field => {
+    field.addEventListener('blur', function() {
+        if (this.hasAttribute('required') && !this.value.trim()) {
+            highlightError(this);
+        } else if (this.type === 'email' && this.value && !isValidEmail(this.value)) {
+            highlightError(this, 'Please enter a valid email address');
+        } else if (this.type === 'tel' && this.value && !isValidPhone(this.value)) {
+            highlightError(this, 'Please enter a valid phone number');
+        } else if (this.type === 'url' && this.value && !isValidURL(this.value)) {
+            highlightError(this, 'Please enter a valid URL');
+        } else {
+            removeError(this);
+        }
+    });
+    
+    field.addEventListener('input', function() {
+        if (this.classList.contains('error')) {
+            removeError(this);
+        }
+    });
+});
+
+// Show success modal
+function showSuccessModal() {
+    const modal = document.getElementById('successModal');
+    modal.classList.add('show');
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+}
+
+// Close modal
+function closeModal() {
+    const modal = document.getElementById('successModal');
+    modal.classList.remove('show');
+    
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal on outside click
+document.getElementById('successModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Smooth scroll for anchor links
+document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href')?.startsWith('#')) {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId) || document.querySelector('.' + targetId);
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
+});
+
+// Auto-format phone numbers
+document.getElementById('contactPhone').addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 10) {
+        value = value.substring(0, 10);
+    }
+    e.target.value = value;
+});
+
+// Prevent form submission on Enter key (except in textarea)
+document.getElementById('partnershipForm').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+    }
+});
+
+// Initialize scroll animations
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.05,
+        rootMargin: '0px 0px 50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all animated elements
+    const animatedElements = document.querySelectorAll(
+        '.benefit-card, .service-card, .industry-card, .process-step, .testimonial-card'
+    );
+    
+    animatedElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = `all 0.5s ease-out ${index * 0.05}s`;
+        observer.observe(el);
+    });
+}
+
+// Dynamic industry card interaction (optional enhancement)
+document.querySelectorAll('.industry-card').forEach(card => {
+    card.addEventListener('click', function() {
+        // Could trigger a modal or navigate to industry-specific page
+        console.log('Industry clicked:', this.textContent);
+    });
+});
+
+// Form progress indicator (optional)
+let filledFields = 0;
+const totalRequiredFields = document.querySelectorAll('[required]').length;
+
+document.querySelectorAll('input, select, textarea').forEach(field => {
+    if (field.hasAttribute('required')) {
+        field.addEventListener('input', function() {
+            updateFormProgress();
+        });
+    }
+});
+
+function updateFormProgress() {
+    const requiredFields = document.querySelectorAll('[required]');
+    let filled = 0;
+    
+    requiredFields.forEach(field => {
+        if (field.value.trim()) {
+            filled++;
+        }
+    });
+    
+    const progress = (filled / totalRequiredFields) * 100;
+    console.log(`Form progress: ${progress.toFixed(0)}%`);
+    
+    // You can display this progress in a progress bar if you add one to the HTML
+}
+
+// Auto-save form data to localStorage (optional)
+const formAutoSaveKey = 'partnershipFormData';
+
+// Save form data
+function saveFormData() {
+    const formData = new FormData(document.getElementById('partnershipForm'));
+    const data = Object.fromEntries(formData.entries());
+    // Don't save checkbox state for privacy
+    delete data.terms;
+    localStorage.setItem(formAutoSaveKey, JSON.stringify(data));
+}
+
+// Restore form data
+function restoreFormData() {
+    const savedData = localStorage.getItem(formAutoSaveKey);
+    if (savedData) {
+        const data = JSON.parse(savedData);
+        const form = document.getElementById('partnershipForm');
+        
+        Object.keys(data).forEach(key => {
+            const field = form.elements[key];
+            if (field && data[key]) {
+                field.value = data[key];
+            }
+        });
+    }
+}
+
+// Auto-save on input change
+document.querySelectorAll('input, select, textarea').forEach(field => {
+    field.addEventListener('change', saveFormData);
+});
+
+// Restore on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Uncomment to enable auto-save/restore feature
+    // restoreFormData();
+});
+
+// Clear saved data on successful submission
+function clearSavedFormData() {
+    localStorage.removeItem(formAutoSaveKey);
+}
+
+// Modify the success modal function to clear saved data
+const originalShowSuccessModal = showSuccessModal;
+showSuccessModal = function() {
+    clearSavedFormData();
+    originalShowSuccessModal();
+};
+
+// Add tooltips for form fields (optional enhancement)
+function addTooltip(fieldId, message) {
+    const field = document.getElementById(fieldId);
+    if (field) {
+        field.setAttribute('title', message);
+    }
+}
+
+// Add helpful tooltips
+document.addEventListener('DOMContentLoaded', function() {
+    addTooltip('companySize', 'Select the approximate number of employees in your organization');
+    addTooltip('hiringVolume', 'Estimated number of positions to fill in the next 3-6 months');
+    addTooltip('serviceType', 'Select the type of recruitment service you need');
+});
+    </script>
+</body>
+</html>

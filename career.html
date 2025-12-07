@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Solis Human Resource Solutions</title>
+    <meta name="description" content="Build your career with Solis. Connecting talent with the right opportunities across industries.">
+    <style>
+        /* ===== RESET & GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #0047AB 0%, #003380 100%);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* ===== SEARCH SECTION ===== */
+        .search-section {
+            background: #e8e8e8;
+            padding: 40px 0;
+        }
+
+        .search-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr auto;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 15px 20px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            outline: none;
+        }
+
+        .search-select {
+            padding: 15px 20px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            padding-right: 40px;
+        }
+
+        .search-btn {
+            padding: 15px 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            background: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-btn:hover {
+            background: #1976D2;
+        }
+
+        /* ===== JOB LISTINGS ===== */
+        .jobs-section {
+            padding: 40px 0;
+            background: white;
+        }
+
+        .job-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s, transform 0.2s;
+        }
+
+        .job-card:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .job-company {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #0047AB;
+            font-size: 1.2rem;
+        }
+
+        .job-info h3 {
+            font-size: 1.4rem;
+            color: #2196F3;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .job-info h3:hover {
+            text-decoration: underline;
+        }
+
+        .company-name {
+            color: #666;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .job-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-quick {
+            background: #2196F3;
+            color: white;
+        }
+
+        .btn-quick:hover {
+            background: #1976D2;
+        }
+
+        .btn-apply {
+            background: #2196F3;
+            color: white;
+        }
+
+        .btn-apply:hover {
+            background: #1976D2;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .job-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .job-description {
+            color: #555;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .search-container {
+                grid-template-columns: 1fr;
+            }
+
+            .job-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .job-actions {
+                width: 100%;
+            }
+
+            .btn {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .job-card {
+                padding: 20px;
+            }
+
+            .job-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Our Current Openings</h1>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Keywords" id="searchKeywords">
+                <select class="search-select" id="searchCategory">
+                    <option value="">Category</option>
+                    <option value="it">Information Technology</option>
+                    <option value="business">Business & Operations</option>
+                    <option value="sales">Sales & Marketing</option>
+                    <option value="finance">Finance & Accounting</option>
+                    <option value="hr">HR & Administration</option>
+                    <option value="gig">Gig & Freelance</option>
+                </select>
+                <select class="search-select" id="searchJobType">
+                    <option value="">Job Type</option>
+                    <option value="fulltime">Full Time</option>
+                    <option value="contract">Contract</option>
+                    <option value="parttime">Part Time</option>
+                    <option value="freelance">Freelance</option>
+                </select>
+                <select class="search-select" id="searchLocation">
+                    <option value="">Location</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="pune">Pune</option>
+                    <option value="remote">Remote</option>
+                </select>
+                <button class="search-btn" onclick="searchJobs()">🔍</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Listings Section -->
+    <section class="jobs-section">
+        <div class="container" id="jobListings">
+            <!-- Job Card 1 -->
+            <div class="job-card" data-category="it" data-type="fulltime" data-location="bangalore">
+                <div class="job-header">
+                    <div class="job-company">
+                        <div class="company-logo">TCS</div>
+                        <div class="job-info">
+                            <h3>Software Developer</h3>
+                            <div class="company-name">
+                                🏢 Tata Consultancy Services
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                     
+                        <button class="btn btn-apply">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-meta">
+                    <div class="job-meta-item">💼 Full time</div>
+                    <div class="job-meta-item">📍 Bangalore</div>
+                    <div class="job-meta-item">📅 Posted 1 week ago</div>
+                </div>
+                <div class="job-description">
+                    We are looking for a talented Software Developer to join our growing team. You will be responsible for developing high-quality applications, collaborating with cross-functional teams, and contributing to all phases of the development lifecycle. Strong knowledge of Java, Python, or JavaScript required.
+                </div>
+            </div>
+
+            <!-- Job Card 2 -->
+            <div class="job-card" data-category="business" data-type="fulltime" data-location="chennai">
+                <div class="job-header">
+                    <div class="job-company">
+                        <div class="company-logo">INF</div>
+                        <div class="job-info">
+                            <h3>Business Analyst</h3>
+                            <div class="company-name">
+                                🏢 Infosys Limited
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        
+                        <button class="btn btn-apply">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-meta">
+                    <div class="job-meta-item">💼 Full time</div>
+                    <div class="job-meta-item">📍 Chennai</div>
+                    <div class="job-meta-item">📅 Posted 3 days ago</div>
+                </div>
+                <div class="job-description">
+                    Seeking an experienced Business Analyst to bridge the gap between IT and business. You will analyze business requirements, document processes, and provide strategic recommendations. Experience with Agile methodologies and data analysis tools preferred.
+                </div>
+            </div>
+
+            <!-- Job Card 3 -->
+            <div class="job-card" data-category="sales" data-type="fulltime" data-location="mumbai">
+                <div class="job-header">
+                    <div class="job-company">
+                        <div class="company-logo">WIP</div>
+                        <div class="job-info">
+                            <h3>Digital Marketing Executive</h3>
+                            <div class="company-name">
+                                🏢 Wipro Technologies
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        
+                        <button class="btn btn-apply">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-meta">
+                    <div class="job-meta-item">💼 Full time</div>
+                    <div class="job-meta-item">📍 Mumbai</div>
+                    <div class="job-meta-item">📅 Posted 2 weeks ago</div>
+                </div>
+                <div class="job-description">
+                    Join our dynamic marketing team as a Digital Marketing Executive. Responsibilities include managing social media campaigns, SEO/SEM activities, email marketing, and analyzing campaign performance. Strong understanding of digital marketing tools and platforms required.
+                </div>
+            </div>
+
+            <!-- Job Card 4 -->
+            <div class="job-card" data-category="it" data-type="fulltime" data-location="hyderabad">
+                <div class="job-header">
+                    <div class="job-company">
+                        <div class="company-logo">HCL</div>
+                        <div class="job-info">
+                            <h3>QA Engineer</h3>
+                            <div class="company-name">
+                                🏢 HCL Technologies
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        
+                        <button class="btn btn-apply">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-meta">
+                    <div class="job-meta-item">💼 Full time</div>
+                    <div class="job-meta-item">📍 Hyderabad</div>
+                    <div class="job-meta-item">📅 Posted 5 days ago</div>
+                </div>
+                <div class="job-description">
+                    We need a detail-oriented QA Engineer to ensure quality of our software products. You will design test plans, execute test cases, identify bugs, and work closely with development teams. Experience with automation testing tools like Selenium is a plus.
+                </div>
+            </div>
+
+            <!-- Job Card 5 -->
+            <div class="job-card" data-category="finance" data-type="fulltime" data-location="pune">
+                <div class="job-header">
+                    <div class="job-company">
+                        <div class="company-logo">ACC</div>
+                        <div class="job-info">
+                            <h3>Accounts Executive</h3>
+                            <div class="company-name">
+                                🏢 Accenture Solutions
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        
+                        <button class="btn btn-apply">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-meta">
+                    <div class="job-meta-item">💼 Full time</div>
+                    <div class="job-meta-item">📍 Pune</div>
+                    <div class="job-meta-item">📅 Posted 1 week ago</div>
+                </div>
+                <div class="job-description">
+                    Looking for an Accounts Executive to manage day-to-day accounting operations including accounts payable/receivable, reconciliations, and financial reporting. Proficiency in Tally or SAP is required. CA Inter or equivalent qualification preferred.
+                </div>
+            </div>
+
+            <!-- Job Card 6 -->
+            <div class="job-card" data-category="gig" data-type="freelance" data-location="remote">
+                <div class="job-header">
+                    <div class="job-company">
+                        <div class="company-logo">GIG</div>
+                        <div class="job-info">
+                            <h3>Content Writer</h3>
+                            <div class="company-name">
+                                🏢 Various Clients
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        
+                        <button class="btn btn-apply">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-meta">
+                    <div class="job-meta-item">💼 Freelance</div>
+                    <div class="job-meta-item">📍 Remote</div>
+                    <div class="job-meta-item">📅 Posted 2 days ago</div>
+                </div>
+                <div class="job-description">
+                    Freelance opportunity for skilled content writers. Create engaging blog posts, articles, and website content for diverse clients. Flexible hours, project-based compensation. Strong command of English and research skills essential.
+                </div>
+            </div>
+
+            <!-- Job Card 7 -->
+            <div class="job-card" data-category="hr" data-type="fulltime" data-location="bangalore">
+                <div class="job-header">
+                    <div class="job-company">
+                        <div class="company-logo">HR</div>
+                        <div class="job-info">
+                            <h3>HR Executive</h3>
+                            <div class="company-name">
+                                🏢 Tech Mahindra
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        
+                        <button class="btn btn-apply">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-meta">
+                    <div class="job-meta-item">💼 Full time</div>
+                    <div class="job-meta-item">📍 Bangalore</div>
+                    <div class="job-meta-item">📅 Posted 4 days ago</div>
+                </div>
+                <div class="job-description">
+                    Join our HR team to support recruitment, onboarding, employee engagement, and HR operations. You will coordinate with various departments and ensure smooth HR processes. 2-3 years of experience in HR operations required.
+                </div>
+            </div>
+
+            <!-- Job Card 8 -->
+            <div class="job-card" data-category="it" data-type="contract" data-location="chennai">
+                <div class="job-header">
+                    <div class="job-company">
+                        <div class="company-logo">UI</div>
+                        <div class="job-info">
+                            <h3>UI/UX Designer</h3>
+                            <div class="company-name">
+                                🏢 Cognizant Technology Solutions
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-actions">
+                        
+                        <button class="btn btn-apply">Apply Now</button>
+                    </div>
+                </div>
+                <div class="job-meta">
+                    <div class="job-meta-item">💼 Contract</div>
+                    <div class="job-meta-item">📍 Chennai</div>
+                    <div class="job-meta-item">📅 Posted 1 week ago</div>
+                </div>
+                <div class="job-description">
+                    6-month contract for a creative UI/UX Designer. Design intuitive user interfaces and user experiences for web and mobile applications. Proficiency in Figma, Adobe XD, or Sketch required. Portfolio mandatory.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+        // Load Header
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            })
+            .catch(error => console.error("Header error:", error));
+
+        // Load Footer
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            })
+            .catch(error => console.error("Footer error:", error));
+
+        // Search functionality
+        function searchJobs() {
+            const keywords = document.getElementById('searchKeywords').value.toLowerCase();
+            const category = document.getElementById('searchCategory').value;
+            const jobType = document.getElementById('searchJobType').value;
+            const location = document.getElementById('searchLocation').value;
+
+            const jobCards = document.querySelectorAll('.job-card');
+
+            jobCards.forEach(card => {
+                const cardText = card.textContent.toLowerCase();
+                const cardCategory = card.getAttribute('data-category');
+                const cardType = card.getAttribute('data-type');
+                const cardLocation = card.getAttribute('data-location');
+
+                const matchesKeywords = !keywords || cardText.includes(keywords);
+                const matchesCategory = !category || cardCategory === category;
+                const matchesType = !jobType || cardType === jobType;
+                const matchesLocation = !location || cardLocation === location;
+
+                if (matchesKeywords && matchesCategory && matchesType && matchesLocation) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Allow Enter key to search
+        document.getElementById('searchKeywords').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchJobs();
+            }
+        });
+
+        // Quick Apply functionality
+        document.querySelectorAll('.btn-quick').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                alert('Quick Apply feature - This will open a simplified application form');
+            });
+        });
+
+        // Apply Now functionality
+        document.querySelectorAll('.btn-apply').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                alert('Apply Now feature - This will redirect to the full application page');
+            });
+        });
+    </script>
+</body>
+</html>

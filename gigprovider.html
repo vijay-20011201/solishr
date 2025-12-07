@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gig Workforce Solutions | Solis Human Resource Solutions</title>
+    <meta name="description" content="Flexible gig workforce for fast-paced business needs. Trusted freelancers, short-term contributors & project-based talent.">
+    <link rel="stylesheet" href="gig-workforce.css">
+    <style>
+        /* ===== RESET & GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+/* ===== CUSTOM CURSOR ===== */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FF6B35;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: 0.1s;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(0, 71, 171, 0.3);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: 0.15s;
+    transform: translate(-50%, -50%);
+}
+
+body.cursor-active .cursor {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #0047AB;
+    margin-bottom: 20px;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.section-title.white {
+    color: white;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.8;
+}
+
+.section-subtitle.center {
+    text-align: center;
+}
+
+.section-subtitle.white {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #FF6B35, #FF8C61);
+    color: white;
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #0047AB;
+    border: 2px solid #0047AB;
+}
+
+.btn.glow {
+    animation: buttonGlow 2s ease-in-out infinite;
+}
+
+@keyframes buttonGlow {
+    0%, 100% {
+        box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+    }
+    50% {
+        box-shadow: 0 5px 35px rgba(255, 107, 53, 0.6), 0 0 20px rgba(255, 107, 53, 0.4);
+    }
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    height: 100vh;
+    background: 
+        linear-gradient(135deg, rgba(0, 71, 171, 0.88) 0%, rgba(255, 107, 53, 0.88) 100%),
+        url('https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(255, 107, 53, 0.2) 0%, transparent 50%);
+}
+
+/* Animated Waves */
+.wave-animation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(255,255,255,0.1)"/></svg>') repeat-x;
+    animation: waveMove 15s linear infinite;
+}
+
+.wave-1 {
+    opacity: 0.3;
+    animation-duration: 20s;
+}
+
+.wave-2 {
+    opacity: 0.2;
+    animation-duration: 25s;
+    animation-delay: -5s;
+}
+
+.wave-3 {
+    opacity: 0.1;
+    animation-duration: 30s;
+    animation-delay: -10s;
+}
+
+@keyframes waveMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Floating Icons */
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.icon-float {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.4;
+    animation: floatIcon 8s ease-in-out infinite;
+}
+
+.icon-float:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.icon-float:nth-child(2) {
+    left: 80%;
+    top: 30%;
+    animation-delay: 2s;
+}
+
+.icon-float:nth-child(3) {
+    left: 60%;
+    top: 70%;
+    animation-delay: 4s;
+}
+
+.icon-float:nth-child(4) {
+    left: 20%;
+    top: 60%;
+    animation-delay: 1s;
+}
+
+.icon-float:nth-child(5) {
+    left: 70%;
+    top: 15%;
+    animation-delay: 3s;
+}
+
+@keyframes floatIcon {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(10deg);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 1000px;
+    padding: 0 20px;
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    width: 250px;
+    margin-bottom: 30px;
+    filter: brightness(0) invert(1);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* ===== GIG INTRO SECTION ===== */
+.gig-intro {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.text-content {
+    animation: slideLeft 1s ease-out;
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.section-description {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.benefits-list {
+    display: grid;
+    gap: 20px;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    align-items: center;
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.benefit-text h3 {
+    color: #0047AB;
+    font-size: 1.15rem;
+    margin-bottom: 5px;
+}
+
+.benefit-text p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.image-content img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== GIG TYPES SECTION ===== */
+.gig-types {
+    padding: 100px 0;
+    background: white;
+}
+
+.gig-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.gig-card {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #0047AB;
+    animation: zoomIn 0.8s ease-out;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.gig-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.gig-card h3 {
+    color: #0047AB;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+}
+
+.gig-roles {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.gig-roles li {
+    padding: 10px 0;
+    color: #555;
+    font-size: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.gig-roles li:last-child {
+    border-bottom: none;
+}
+
+.gig-roles li::before {
+    content: '✓ ';
+    color: #FF6B35;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* ===== WHY SOLIS SECTION ===== */
+.why-solis {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0047AB 0%, #003380 100%);
+    color: white;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.advantage-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideRight 1s ease-out;
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.advantage-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.advantage-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.advantage-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ===== HOW IT WORKS SECTION ===== */
+.how-it-works {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.process-timeline {
+    max-width: 900px;
+    margin: 50px auto 0;
+    position: relative;
+}
+
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #0047AB, #FF6B35);
+}
+
+.process-step {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    animation: slideLeft 0.8s ease-out;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #FF6B35, #FF8C61);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.step-content {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.step-content h3 {
+    color: #0047AB;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.step-content p {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* ===== INDUSTRIES SECTION ===== */
+.industries {
+    padding: 100px 0;
+    background: white;
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.industry-card {
+    background: #f8f9fa;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.8s ease-out;
+}
+
+.industry-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.industry-card h3 {
+    color: #0047AB;
+    font-size: 1.2rem;
+}
+
+/* ===== SUCCESS STORIES SECTION ===== */
+.success-stories {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.testimonials-slider {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    position: relative;
+    animation: fadeIn 1s ease-out;
+}
+
+.quote-icon {
+    font-size: 4rem;
+    color: #FF6B35;
+    opacity: 0.2;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.testimonial-author strong {
+    display: block;
+    color: #0047AB;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.testimonial-author span {
+    color: #999;
+    font-size: 0.95rem;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-section .btn-primary {
+    background: white;
+    color: #FF6B35;
+}
+
+.cta-section .btn-secondary {
+    border-color: white;
+    color: white;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 5px 40px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .gig-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .advantages-grid,
+    .industries-grid,
+    .testimonials-slider {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .gig-grid,
+    .advantages-grid,
+    .industries-grid,
+    .testimonials-slider {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-timeline::before {
+        left: 30px;
+    }
+    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="wave-animation">
+            <div class="wave wave-1"></div>
+            <div class="wave wave-2"></div>
+            <div class="wave wave-3"></div>
+        </div>
+        <div class="floating-icons">
+            <div class="icon-float">💻</div>
+            <div class="icon-float">📱</div>
+            <div class="icon-float">🎨</div>
+            <div class="icon-float">📊</div>
+            <div class="icon-float">✉️</div>
+        </div>
+        <div class="hero-content">
+            <img src="your-logo.png" alt="Solis HR Solutions" class="logo">
+            <h1 class="hero-title">Flexible Gig Workforce for Fast-Paced Business Needs</h1>
+            <h2 class="hero-subtitle">Trusted Freelancers, Short-Term Contributors & Project-Based Talent</h2>
+            <p class="hero-description">
+                Solis connects businesses with skilled gig workers who can support short-term projects, immediate workloads, specialized tasks, and remote operations. Our curated gig talent network ensures quality, reliability, and on-time delivery.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary glow">Hire Gig Talent Now</a>
+                <a href="#contact" class="btn btn-secondary">Talk to a Gig Workforce Specialist</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="gig-intro">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="text-content slide-left">
+                    <h2 class="section-title">The Future of Work Is Flexible</h2>
+                    <p class="section-description">
+                        Gig work is no longer limited to creative fields. Organizations across industries now rely on flexible, specialized professionals who work on-demand. Solis provides an agile gig workforce that enables businesses to scale instantly without long-term commitments.
+                    </p>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💰</div>
+                            <div class="benefit-text">
+                                <h3>Pay Only for What You Need</h3>
+                                <p>No overhead costs or long-term commitments</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">⚡</div>
+                            <div class="benefit-text">
+                                <h3>Faster Project Execution</h3>
+                                <p>Immediate access to skilled professionals</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🎯</div>
+                            <div class="benefit-text">
+                                <h3>Specialized Skill Sets</h3>
+                                <p>Expert talent for specific project needs</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📉</div>
+                            <div class="benefit-text">
+                                <h3>No Long-Term Hiring Cost</h3>
+                                <p>Flexible engagement without permanent expenses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Remote Workers">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types of Gig Workers -->
+    <section class="gig-types">
+        <div class="container">
+            <h2 class="section-title center">Gig Talent Across Multiple Skill Categories</h2>
+            <p class="section-subtitle center">Solis offers highly-skilled, pre-verified gig professionals for short-term assignments or project-based work.</p>
+            
+            <div class="gig-grid">
+                <div class="gig-card zoom-in">
+                    <div class="gig-icon">💻</div>
+                    <h3>Technical & IT Gig Talent</h3>
+                    <ul class="gig-roles">
+                        <li>Software Developers</li>
+                        <li>QA Testers</li>
+                        <li>Data Entry Specialists</li>
+                        <li>UI/UX Designers</li>
+                        <li>IT Support Technicians</li>
+                    </ul>
+                </div>
+
+                <div class="gig-card zoom-in">
+                    <div class="gig-icon">💼</div>
+                    <h3>Business & Administrative</h3>
+                    <ul class="gig-roles">
+                        <li>Virtual Assistants</li>
+                        <li>Customer Support Agents</li>
+                        <li>MIS/Reporting Executives</li>
+                        <li>Content Writers</li>
+                        <li>Operations Assistants</li>
+                    </ul>
+                </div>
+
+                <div class="gig-card zoom-in">
+                    <div class="gig-icon">📊</div>
+                    <h3>Sales & Marketing</h3>
+                    <ul class="gig-roles">
+                        <li>Digital Marketers</li>
+                        <li>Social Media Executives</li>
+                        <li>Lead Generation Specialists</li>
+                        <li>Tele-Sales Agents</li>
+                    </ul>
+                </div>
+
+                <div class="gig-card zoom-in">
+                    <div class="gig-icon">🎨</div>
+                    <h3>Creative & Media</h3>
+                    <ul class="gig-roles">
+                        <li>Graphic Designers</li>
+                        <li>Video Editors</li>
+                        <li>Photographers</li>
+                        <li>Content Creators</li>
+                    </ul>
+                </div>
+
+                <div class="gig-card zoom-in">
+                    <div class="gig-icon">📦</div>
+                    <h3>Field & On-Ground Workforce</h3>
+                    <ul class="gig-roles">
+                        <li>Delivery Executives</li>
+                        <li>Event Staff</li>
+                        <li>Promoters</li>
+                        <li>Logistics Helpers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Solis -->
+    <section class="why-solis">
+        <div class="container">
+            <h2 class="section-title center white">Reliable Gig Workforce. Zero Hassle. Maximum Efficiency.</h2>
+            <p class="section-subtitle center white">Our gig talent network is carefully curated to ensure speed, professionalism, and quality output.</p>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">⚡</div>
+                    <h3>Fast Deployment</h3>
+                    <p>Gig workers available within hours</p>
+                </div>
+
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">✓</div>
+                    <h3>Pre-Verified Skills</h3>
+                    <p>Screening, skill tests, and background checks</p>
+                </div>
+
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">⏰</div>
+                    <h3>Flexible Duration</h3>
+                    <p>Hourly, daily, weekly, or project-based</p>
+                </div>
+
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">💰</div>
+                    <h3>Cost-Efficient</h3>
+                    <p>Pay only for work completed</p>
+                </div>
+
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">🌐</div>
+                    <h3>Remote & On-Site Options</h3>
+                    <p>Based on business requirement</p>
+                </div>
+
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">🎯</div>
+                    <h3>Hassle-Free Management</h3>
+                    <p>Solis handles coordination and payroll</p>
+                </div>
+
+                <div class="advantage-card slide-right">
+                    <div class="advantage-icon">👥</div>
+                    <h3>Large Talent Pool</h3>
+                    <p>Gig workers across industries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title center">Simple. Fast. Flexible.</h2>
+            <p class="section-subtitle center">Our process ensures smooth onboarding and delivery for every gig worker.</p>
+            
+            <div class="process-timeline">
+                <div class="process-step slide-left">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Requirement Understanding</h3>
+                        <p>Type of gig work, duration, skills, and expected outcomes.</p>
+                    </div>
+                </div>
+
+                <div class="process-step slide-left">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Gig Talent Shortlisting</h3>
+                        <p>We share profiles of pre-verified gig workers tailored to your needs.</p>
+                    </div>
+                </div>
+
+                <div class="process-step slide-left">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Quick Assignment Confirmation</h3>
+                        <p>You select candidates based on skills, availability, and budget.</p>
+                    </div>
+                </div>
+
+                <div class="process-step slide-left">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Work Commencement</h3>
+                        <p>Gig worker starts the assignment either remotely or onsite.</p>
+                    </div>
+                </div>
+
+                <div class="process-step slide-left">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Performance Monitoring</h3>
+                        <p>Solis continuously tracks deliverables and provides support.</p>
+                    </div>
+                </div>
+
+                <div class="process-step slide-left">
+                    <div class="step-number">06</div>
+                    <div class="step-content">
+                        <h3>Payment & Completion</h3>
+                        <p>Flexible payment models based on hours, milestones, or project completion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries">
+        <div class="container">
+            <h2 class="section-title center">Gig Workforce Across All Sectors</h2>
+            
+            <div class="industries-grid">
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">💻</div>
+                    <h3>IT & Software</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🛒</div>
+                    <h3>Retail</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">📦</div>
+                    <h3>Logistics</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🛍️</div>
+                    <h3>E-commerce</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">💰</div>
+                    <h3>Finance</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🎉</div>
+                    <h3>Events</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🏥</div>
+                    <h3>Healthcare</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">🎓</div>
+                    <h3>EdTech</h3>
+                </div>
+
+                <div class="industry-card fade-in">
+                    <div class="industry-icon">📱</div>
+                    <h3>Digital Marketing</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <h2 class="section-title center">What Companies Say About Our Gig Talent</h2>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Solis helped us onboard gig workers for our project in just one day. Exceptional service!</p>
+                    <div class="testimonial-author">
+                        <strong>— Project Manager</strong>
+                        <span>Tech Company</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">The quality of freelance designers from Solis exceeded our expectations.</p>
+                    <div class="testimonial-author">
+                        <strong>— Creative Director</strong>
+                        <span>Marketing Agency</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Gig staffing reduced our workload during peak season without increasing long-term costs.</p>
+                    <div class="testimonial-author">
+                        <strong>— Operations Head</strong>
+                        <span>E-commerce Platform</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Need Gig Workers for an Urgent Project?</h2>
+                <p class="cta-description">
+                    Solis provides flexible, fast, and reliable gig workforce solutions customized to your business needs.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary pulse">Hire Gig Talent Now</a>
+                    <a href="#contact" class="btn btn-secondary">Talk to a Gig Workforce Specialist</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+        
+        // CRITICAL FIX: Load header and footer FIRST, then initialize animations
+        let headerLoaded = false;
+        let footerLoaded = false;
+
+        // Load Header
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+                headerLoaded = true;
+                checkIfReady();
+            })
+            .catch(error => console.error("Header error:", error));
+
+        // Load Footer
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+                footerLoaded = true;
+                checkIfReady();
+            })
+            .catch(error => console.error("Footer error:", error));
+
+        // Wait for both to load, then initialize animations
+        function checkIfReady() {
+            if (headerLoaded && footerLoaded) {
+                setTimeout(() => {
+                    initializeAllAnimations();
+                }, 150);
+            }
+        }
+
+        // Custom Cursor
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+let followerX = 0;
+let followerY = 0;
+
+// Update mouse position
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+// Smooth cursor animation
+function animateCursor() {
+    // Cursor dot follows mouse immediately
+    cursorX += (mouseX - cursorX) * 0.3;
+    cursorY += (mouseY - cursorY) * 0.3;
+    
+    // Follower circle lags behind
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
+    
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    
+    cursorFollower.style.left = followerX + 'px';
+    cursorFollower.style.top = followerY + 'px';
+    
+    requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
+// Add active state on click
+document.addEventListener('mousedown', () => {
+    document.body.classList.add('cursor-active');
+});
+
+document.addEventListener('mouseup', () => {
+    document.body.classList.remove('cursor-active');
+});
+
+// Intersection Observer for scroll animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0) translateX(0) scale(1)';
+        }
+    });
+}, observerOptions);
+
+// Observe all animated elements
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll(
+        '.slide-left, .slide-right, .zoom-in, .fade-in'
+    );
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        
+        if (el.classList.contains('slide-left')) {
+            el.style.transform = 'translateX(-50px)';
+        } else if (el.classList.contains('slide-right')) {
+            el.style.transform = 'translateX(50px)';
+        } else if (el.classList.contains('zoom-in')) {
+            el.style.transform = 'scale(0.9)';
+        } else if (el.classList.contains('fade-in')) {
+            el.style.transform = 'translateY(30px)';
+        }
+        
+        el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        observer.observe(el);
+    });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+
+// Add stagger animation delay to grid items
+document.addEventListener('DOMContentLoaded', () => {
+    const grids = [
+        '.gig-grid .gig-card',
+        '.advantages-grid .advantage-card',
+        '.industries-grid .industry-card',
+        '.testimonials-slider .testimonial-card',
+        '.process-step',
+        '.benefit-item'
+    ];
+    
+    grids.forEach(selector => {
+        const items = document.querySelectorAll(selector);
+        items.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
+    });
+});
+
+// Enhance floating icons animation
+document.addEventListener('DOMContentLoaded', () => {
+    const icons = document.querySelectorAll('.icon-float');
+    icons.forEach((icon, index) => {
+        // Random movement variations
+        const randomDelay = Math.random() * 5;
+        const randomDuration = 6 + Math.random() * 4;
+        
+        icon.style.animationDelay = randomDelay + 's';
+        icon.style.animationDuration = randomDuration + 's';
+    });
+});
+
+// Wave animation enhancement
+document.addEventListener('DOMContentLoaded', () => {
+    const waves = document.querySelectorAll('.wave');
+    waves.forEach((wave, index) => {
+        wave.style.animationDelay = `-${index * 5}s`;
+    });
+});
+    </script>
+</body>
+</html>
