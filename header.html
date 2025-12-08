@@ -496,6 +496,8 @@ body {
 }
 </style>
 
+<!-- Add this right after your opening <body> -->
+
 <!-- Top Bar -->
 <div class="top-bar">
     <div class="top-bar-container">
@@ -554,6 +556,7 @@ body {
     </div>
 </header>
 
+
 <script>
 // Mobile Menu Toggle
 const toggle = document.getElementById("menuToggle");
@@ -598,7 +601,10 @@ if (servicesDropdown) {
 
 // Sticky header effect
 window.addEventListener("scroll", () => {
-    document.querySelector(".header").classList.toggle("scrolled", window.scrollY > 50);
+    const header = document.querySelector(".header");
+    if (header) {
+        header.classList.toggle("scrolled", window.scrollY > 50);
+    }
 });
 
 // Auto active nav menu
@@ -632,17 +638,17 @@ window.addEventListener("resize", function() {
             toggle.classList.remove("active");
             overlay.classList.remove("active");
             document.body.style.overflow = "auto";
-            servicesDropdown.classList.remove("active");
+            if (servicesDropdown) {
+                servicesDropdown.classList.remove("active");
+            }
         }
     }, 250);
 });
 
 // Prevent body scroll when menu is open
 document.addEventListener("touchmove", function(e) {
-    if (menu.classList.contains("active") && !menu.contains(e.target)) {
+    if (menu && menu.classList.contains("active") && !menu.contains(e.target)) {
         e.preventDefault();
     }
 }, { passive: false });
 </script>
-
-<!-- HEADER END -->
