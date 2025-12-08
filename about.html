@@ -254,75 +254,94 @@ section {
 /* Welcome Section */
 .welcome {
     background: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920') center/cover;
+    padding: 100px 0;
+    position: relative;
 }
 
+/* Remove overlay effect */
 .welcome .section-overlay {
-    background: rgba(249, 249, 249, 0.95);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .welcome-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
-    align-items: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+}
+
+
+.welcome-text {
+    max-width: 900px;
 }
 
 .welcome-text p {
     font-size: 1.1rem;
     line-height: 1.9;
-    color: #555;
+    color: #ffffff;   /* ✅ change to white for readability */
     margin-bottom: 20px;
 }
 
-.welcome-image img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+/* Title */
+.section-title {
+    text-align: center;
+    color: #1d5cef;   /* ✅ looks best on image */
 }
+
 
 /* Why Choose Us Section */
 .why-choose {
     background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920') center/cover;
+    padding: 100px 0;
+    position: relative;
+    background: rgba(0, 0, 0, 0.01);
 }
 
-.why-choose .section-overlay {
-    background: rgba(255, 255, 255, 0.97);
+/* Section title */
+.why-choose .section-title {
+    text-align: center;
+    color: #2060e0;
+    margin-bottom: 60px;
 }
 
+/* Content wrapper */
 .why-choose-content {
+    display: flex;
+    justify-content: center;
+}
+
+/* ✅ 2 × 2 grid layout */
+.why-items {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.why-image img {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1100px;
     width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
 }
 
+/* Cards */
 .why-item {
     display: flex;
     gap: 20px;
-    margin-bottom: 30px;
-    padding: 20px;
-    background: white;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.9); /* subtle glass look */
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     transition: all 0.4s ease;
 }
 
 .why-item:hover {
-    transform: translateX(10px);
-    box-shadow: 0 10px 30px rgba(0, 71, 171, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 71, 171, 0.25);
 }
 
+/* Icons */
 .why-icon {
     font-size: 2.5rem;
     flex-shrink: 0;
 }
 
+/* Text */
 .why-item h3 {
     color: #0047AB;
     margin-bottom: 8px;
@@ -330,9 +349,17 @@ section {
 }
 
 .why-item p {
-    color: #666;
+    color: #555;
     line-height: 1.7;
 }
+
+/* ✅ Responsive - Mobile */
+@media (max-width: 768px) {
+    .why-items {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* Mission Section */
 .mission {
@@ -340,14 +367,14 @@ section {
 }
 
 .mission .section-overlay {
-    background: rgba(249, 249, 249, 0.95);
+    background: rgba(0, 0, 0, 0.85);
 }
 
 .mission-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 50px;
-    align-items: center;
+    grid-template-columns: 1fr;   /* ✅ remove empty column */
+    justify-items: center;        /* ✅ center content horizontally */
+    text-align: center;           /* ✅ center text */
 }
 
 .mission-statement {
@@ -361,7 +388,7 @@ section {
 .mission-text p {
     font-size: 1.1rem;
     line-height: 1.9;
-    color: #555;
+    color: #e7e5e5;
     margin-bottom: 20px;
 }
 
@@ -374,60 +401,86 @@ section {
 /* Vision Section */
 .vision {
     background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920') center/cover;
+    padding: 100px 0;
+    position: relative;
 }
 
 .vision .section-overlay {
     background: rgba(255, 255, 255, 0.97);
 }
 
+/* Center content (GIF removed) */
 .vision-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 50px;
-    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
-.vision-image img {
+/* Text wrapper */
+.vision-text {
+    max-width: 1100px;
     width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    
 }
 
+/* Vision statement */
 .vision-statement {
     font-size: 1.4rem;
     font-weight: 600;
-    color: #0047AB;
-    margin-bottom: 30px;
+    color: #ffffff;
+    margin-bottom: 40px;
     line-height: 1.8;
 }
 
+/* ✅ 2 × 2 grid */
+.vision-points {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* Cards */
 .vision-point {
     display: flex;
     gap: 15px;
     align-items: flex-start;
-    margin-bottom: 20px;
-    padding: 15px;
-    background: white;
+    padding: 20px;
+    background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
 }
 
 .vision-point:hover {
-    transform: translateX(10px);
-    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.25);
 }
 
+/* Icons */
 .point-icon {
     font-size: 1.8rem;
     flex-shrink: 0;
 }
 
+/* Text */
 .vision-point p {
     color: #555;
     font-size: 1.1rem;
     line-height: 1.7;
+    text-align: left;
 }
+
+/* ✅ Mobile */
+@media (max-width: 768px) {
+    .vision-points {
+        grid-template-columns: 1fr;
+    }
+
+    .vision-content {
+        text-align: left;
+    }
+}
+
 
 /* Values Section */
 .values {
@@ -435,7 +488,7 @@ section {
 }
 
 .values .section-overlay {
-    background: rgba(249, 249, 249, 0.95);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .values-intro {
@@ -497,47 +550,56 @@ section {
 /* Team Section */
 .team {
     background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920') center/cover;
+    padding: 100px 0;
+    position: relative;
 }
 
 .team .section-overlay {
-    background: rgba(255, 255, 255, 0.97);
+    background: rgba(143, 143, 246, 0.97);
 }
 
+/* Intro */
 .team-intro {
     text-align: center;
     font-size: 1.2rem;
-    color: #555;
+    color: #fffcfc;
     margin-bottom: 50px;
 }
 
+/* ✅ Center content (GIF removed) */
 .team-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 50px;
-    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
-.team-image img {
+/* Text wrapper */
+.team-text {
+    max-width: 1100px;
     width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
 }
 
+/* Paragraphs */
 .team-text p {
     font-size: 1.1rem;
     line-height: 1.9;
-    color: #555;
+    color: #ffffff;
     margin-bottom: 30px;
 }
 
+/* ✅ Stats centered in ONE row */
 .team-highlights {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: nowrap;
 }
 
+/* Cards */
 .highlight-item {
+    min-width: 220px;
     text-align: center;
     padding: 25px;
     background: linear-gradient(135deg, #0047AB, #FF6B35);
@@ -550,6 +612,7 @@ section {
     transform: scale(1.05);
 }
 
+/* Numbers */
 .highlight-number {
     display: block;
     font-size: 2.5rem;
@@ -562,10 +625,19 @@ section {
     font-size: 1rem;
 }
 
+/* Commitment text */
 .team-commitment {
     font-style: italic;
     color: #0047AB;
 }
+
+/* ✅ Mobile responsive */
+@media (max-width: 768px) {
+    .team-highlights {
+        flex-wrap: wrap;
+    }
+}
+
 
 /* Services Section */
 .services {
@@ -1269,55 +1341,55 @@ section {
                     <p>Solis is built on a simple idea: people deserve the right opportunities and companies deserve the right talent. We act as a bridge, bringing skilled professionals and growing organizations together with clarity, transparency, and trust.</p>
                     <p>We partner with startups, mid-sized businesses, and enterprises to deliver hiring solutions that meet both today's needs and tomorrow's vision. Every engagement is handled with care, confidentiality, and commitment.</p>
                 </div>
-                <div class="welcome-image">
-                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGM4OGJkYzRhNzVmNzI4YmQ4YmE3ZGFiNzBhZDVkYjhjMjFiOWY4ZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/3o7btPCcdNniyf0ArS/giphy.gif" alt="Team Collaboration">
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose zoom-in">
-        <div class="section-overlay"></div>
-        <div class="section-container">
-            <h2 class="section-title">Why Choose Solis</h2>
-            <div class="why-choose-content">
-                <div class="why-image">
-                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzk4ZGE4YzRhOGY4YzNiYjRhOGU4YzRhNjhjYzE4YzRhNjhjMjFiZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/xT9IgzoKnwFNmISR8I/giphy.gif" alt="Success">
-                </div>
-                <div class="why-text">
-                    <div class="why-item">
-                        <div class="why-icon">⭐</div>
-                        <div>
-                            <h3>Industry Expertise</h3>
-                            <p>Years of experience across multiple industries and sectors</p>
-                        </div>
-                    </div>
-                    <div class="why-item">
-                        <div class="why-icon">🎯</div>
-                        <div>
-                            <h3>Quality Over Quantity</h3>
-                            <p>We focus on perfect matches, not just quick placements</p>
-                        </div>
-                    </div>
-                    <div class="why-item">
-                        <div class="why-icon">🤝</div>
-                        <div>
-                            <h3>Personalized Approach</h3>
-                            <p>Every client and candidate receives dedicated attention</p>
-                        </div>
-                    </div>
-                    <div class="why-item">
-                        <div class="why-icon">💡</div>
-                        <div>
-                            <h3>Innovative Solutions</h3>
-                            <p>Modern hiring strategies for today's dynamic workforce</p>
-                        </div>
+<section class="why-choose zoom-in">
+    <div class="section-container">
+        <h2 class="section-title">Why Choose Solis</h2>
+
+        <div class="why-choose-content">
+            <div class="why-items">
+                
+                <div class="why-item">
+                    <div class="why-icon">⭐</div>
+                    <div>
+                        <h3>Industry Expertise</h3>
+                        <p>Years of experience across multiple industries and sectors</p>
                     </div>
                 </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🎯</div>
+                    <div>
+                        <h3>Quality Over Quantity</h3>
+                        <p>We focus on perfect matches, not just quick placements</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">🤝</div>
+                    <div>
+                        <h3>Personalized Approach</h3>
+                        <p>Every client and candidate receives dedicated attention</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon">💡</div>
+                    <div>
+                        <h3>Innovative Solutions</h3>
+                        <p>Modern hiring strategies for today's dynamic workforce</p>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Mission Section -->
     <section class="mission slide-right">
@@ -1329,46 +1401,50 @@ section {
                     <p class="mission-statement">To bridge the gap between exceptional talent and visionary organizations, creating meaningful connections that drive mutual growth and success.</p>
                     <p>We are committed to transforming the recruitment landscape by prioritizing human connection, understanding organizational culture, and recognizing individual potential. Our mission extends beyond placements—we aim to build lasting relationships that contribute to the professional ecosystem.</p>
                 </div>
-                <div class="mission-image">
-                    <img src="Gifs/missiongif.gif" alt="Mission">
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Vision Section -->
-    <section class="vision fade-in">
-        <div class="section-overlay"></div>
-        <div class="section-container">
-            <h2 class="section-title">Our Vision</h2>
-            <div class="vision-content">
-                <div class="vision-image">
-                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjhjMjFiZTZhNzBhZDVkYjhjMjFiZTYmZXA9djFfaW50ZXJuYWxfZ2lmc19naWZJZCZjdD1n/3oKIPnAiaMCws8nOsE/giphy.gif" alt="Vision">
-                </div>
-                <div class="vision-text">
-                    <p class="vision-statement">To become the most trusted human resource partner, recognized for creating opportunities that transform careers and empower organizations worldwide.</p>
-                    <div class="vision-points">
-                        <div class="vision-point">
-                            <span class="point-icon">🌟</span>
-                            <p>Lead the industry in ethical recruitment practices</p>
-                        </div>
-                        <div class="vision-point">
-                            <span class="point-icon">🌍</span>
-                            <p>Expand our reach to serve diverse global markets</p>
-                        </div>
-                        <div class="vision-point">
-                            <span class="point-icon">📈</span>
-                            <p>Continuously innovate our talent acquisition strategies</p>
-                        </div>
-                        <div class="vision-point">
-                            <span class="point-icon">💼</span>
-                            <p>Build sustainable partnerships that stand the test of time</p>
-                        </div>
+<section class="vision fade-in">
+    <div class="section-overlay"></div>
+    <div class="section-container">
+        <h2 class="section-title">Our Vision</h2>
+
+        <div class="vision-content">
+            <div class="vision-text">
+                <p class="vision-statement">
+                    To become the most trusted human resource partner, recognized for
+                    creating opportunities that transform careers and empower
+                    organizations worldwide.
+                </p>
+
+                <div class="vision-points">
+                    <div class="vision-point">
+                        <span class="point-icon">🌟</span>
+                        <p>Lead the industry in ethical recruitment practices</p>
+                    </div>
+
+                    <div class="vision-point">
+                        <span class="point-icon">🌍</span>
+                        <p>Expand our reach to serve diverse global markets</p>
+                    </div>
+
+                    <div class="vision-point">
+                        <span class="point-icon">📈</span>
+                        <p>Continuously innovate our talent acquisition strategies</p>
+                    </div>
+
+                    <div class="vision-point">
+                        <span class="point-icon">💼</span>
+                        <p>Build sustainable partnerships that stand the test of time</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Values Section -->
     <section class="values slide-left">
@@ -1411,36 +1487,49 @@ section {
     </section>
 
     <!-- Our Team Section -->
-    <section class="team zoom-in">
-        <div class="section-overlay"></div>
-        <div class="section-container">
-            <h2 class="section-title">Our Team</h2>
-            <p class="team-intro">Meet the dedicated professionals behind Solis Human Resource Solutions</p>
-            <div class="team-content">
-                <div class="team-image">
-                    <img src="Gifs/ourteamgif.gif" alt="Our Team">
-                </div>
-                <div class="team-text">
-                    <p>Our team comprises seasoned recruitment professionals, industry experts, and dedicated support staff who share a common passion: connecting the right people with the right opportunities.</p>
-                    <div class="team-highlights">
-                        <div class="highlight-item">
-                            <span class="highlight-number">15+</span>
-                            <span class="highlight-label">Years Combined Experience</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-number">50+</span>
-                            <span class="highlight-label">Recruitment Specialists</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-number">20+</span>
-                            <span class="highlight-label">Industry Verticals</span>
-                        </div>
+<section class="team zoom-in">
+    <div class="section-overlay"></div>
+    <div class="section-container">
+        <h2 class="section-title">Our Team</h2>
+        <p class="team-intro">
+            Meet the dedicated professionals behind Solis Human Resource Solutions
+        </p>
+
+        <div class="team-content">
+            <div class="team-text">
+                <p>
+                    Our team comprises seasoned recruitment professionals, industry experts,
+                    and dedicated support staff who share a common passion: connecting the
+                    right people with the right opportunities.
+                </p>
+
+                <div class="team-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-number">15+</span>
+                        <span class="highlight-label">Years Combined Experience</span>
                     </div>
-                    <p class="team-commitment">Every team member brings unique expertise and a shared commitment to excellence, ensuring that your recruitment needs are met with professionalism and care.</p>
+
+                    <div class="highlight-item">
+                        <span class="highlight-number">50+</span>
+                        <span class="highlight-label">Recruitment Specialists</span>
+                    </div>
+
+                    <div class="highlight-item">
+                        <span class="highlight-number">20+</span>
+                        <span class="highlight-label">Industry Verticals</span>
+                    </div>
                 </div>
+
+                <p class="team-commitment">
+                    Every team member brings unique expertise and a shared commitment to
+                    excellence, ensuring that your recruitment needs are met with
+                    professionalism and care.
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Services Snapshot - What We Do -->
     <section class="services slide-right">
@@ -1649,7 +1738,7 @@ section {
 
         <div class="dual-actions">
             <a href="#" class="dual-btn">Upload Resume</a>
-            <a href="#" class="dual-btn">Contact Us</a>
+            <a href="contactform.html" class="dual-btn">Contact Us</a>
         </div>
     </div>
 
@@ -1660,7 +1749,7 @@ section {
             Hire verified professionals who align with your business goals, team culture, 
             and performance expectations.
         </p>
-        <a href="#" class="dual-btn">Request Talent</a>
+        <a href="companyform.html" class="dual-btn">Request Talent</a>
     </div>
 
     <!-- RIGHT -->
@@ -1670,7 +1759,7 @@ section {
             Collaborate with us to deliver talent solutions, staffing support, 
             and workforce growth initiatives across industries.
         </p>
-        <a href="#" class="dual-btn">Partner With Us</a>
+        <a href="partnerform.html" class="dual-btn">Partner With Us</a>
     </div>
 
 </section>
@@ -1911,17 +2000,7 @@ function initializeAllAnimations() {
         });
     });
 
-    // Parallax effect for background images
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('section');
-        
-        parallaxElements.forEach((el, index) => {
-            const speed = 0.5;
-            const yPos = -(scrolled * speed);
-            el.style.backgroundPositionY = yPos + 'px';
-        });
-    });
+    
 
     // Make body visible
     document.body.classList.add('page-visible');

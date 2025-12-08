@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Career Application | Solis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f8ff;
+        }
+
+        .career-form {
+            max-width: 550px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0047AB;
+            margin-bottom: 25px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: none;
+            height: 110px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #0047AB, #FF6B35);
+            color: #fff;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .status {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="career-form">
+    <h2>Career Application</h2>
+
+    <form id="careerForm">
+
+        <input type="text" name="name" placeholder="Full Name" required>
+
+        <input type="tel" name="mobile" placeholder="Mobile Number" required>
+
+        <input type="email" name="email" placeholder="Email ID" required>
+
+        <input type="number" name="graduation_year" placeholder="Graduation Year" required>
+
+        <input type="text" name="department" placeholder="Department / Specialization" required>
+
+        <input type="text" name="skills" placeholder="Skills (comma separated)" required>
+
+        <!-- Experience -->
+        <label><strong>Do you have experience?</strong></label>
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="experience" value="Yes" onclick="toggleExperience(true)" required>
+                Yes
+            </label>
+            <label>
+                <input type="radio" name="experience" value="No" onclick="toggleExperience(false)">
+                No
+            </label>
+        </div>
+
+        <!-- Experience Details -->
+        <div id="experienceFields" style="display:none;">
+            <input type="number" name="experience_years" placeholder="Years of Experience">
+            <input type="text" name="company_name" placeholder="Current / Last Company Name">
+        </div>
+
+        <textarea name="comments" placeholder="Comments / Additional Information"></textarea>
+
+        <button type="submit">Submit Application</button>
+
+        <div class="status" id="status"></div>
+    </form>
+</div>
+
+<script>
+    // EmailJS Init
+    (function() {
+        emailjs.init("YOUR_PUBLIC_KEY"); // 🔴 Replace with your Public Key
+    })();
+
+    // Toggle Experience Fields
+    function toggleExperience(show) {
+        document.getElementById("experienceFields").style.display = show ? "block" : "none";
+    }
+
+    // Submit Form
+    document.getElementById("careerForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const status = document.getElementById("status");
+        status.innerText = "Submitting...";
+        status.style.color = "black";
+
+        emailjs.sendForm(
+            "YOUR_SERVICE_ID",   // 🔴 Replace
+            "YOUR_TEMPLATE_ID",  // 🔴 Replace
+            this
+        ).then(
+            function() {
+                status.style.color = "green";
+                status.innerText = "Application submitted successfully!";
+                document.getElementById("careerForm").reset();
+                document.getElementById("experienceFields").style.display = "none";
+            },
+            function(error) {
+                status.style.color = "red";
+                status.innerText = "Submission failed. Please try again later.";
+                console.error(error);
+            }
+        );
+    });
+</script>
+
+</body>
+</html>

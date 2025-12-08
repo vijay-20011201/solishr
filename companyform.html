@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Talent | Solis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7ff;
+        }
+
+        .hire-form {
+            max-width: 600px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0047AB;
+            margin-bottom: 25px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 14px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #0047AB, #FF6B35);
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.92;
+        }
+
+        .status {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hire-form">
+    <h2>Request Talent</h2>
+
+    <form id="hireTalentForm">
+
+        <input type="text" name="company_name" placeholder="Company Name" required>
+
+        <input type="text" name="contact_person" placeholder="Contact Person Name" required>
+
+        <input type="email" name="email" placeholder="Company Email" required>
+
+        <input type="tel" name="phone" placeholder="Contact Number" required>
+
+        <input type="text" name="industry" placeholder="Industry / Domain" required>
+
+        <input type="text" name="job_title" placeholder="Job Title / Role" required>
+
+        <input type="number" name="openings" placeholder="Number of Positions" required>
+
+        <select name="employment_type" required>
+            <option value="">Employment Type</option>
+            <option value="Full-Time">Full-Time</option>
+            <option value="Contract">Contract</option>
+            <option value="Gig">Gig / Freelance</option>
+        </select>
+
+        <input type="text" name="experience" placeholder="Experience Required (e.g. 3-5 Years)" required>
+
+        <input type="text" name="salary" placeholder="Salary / Budget Range">
+
+        <input type="text" name="job_location" placeholder="Job Location (Onsite / Remote / Hybrid)" required>
+
+        <input type="text" name="skills" placeholder="Required Skills (comma separated)" required>
+
+        <textarea name="notes" placeholder="Additional Requirements / Notes"></textarea>
+
+        <button type="submit">Submit Hiring Request</button>
+
+        <div class="status" id="status"></div>
+    </form>
+</div>
+
+<script>
+    // Initialize EmailJS
+    (function () {
+        emailjs.init("YOUR_PUBLIC_KEY"); // 🔴 Replace with your Public Key
+    })();
+
+    // Submit form
+    document.getElementById("hireTalentForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const status = document.getElementById("status");
+        status.innerText = "Submitting request...";
+        status.style.color = "black";
+
+        emailjs.sendForm(
+            "YOUR_SERVICE_ID",   // 🔴 Replace Service ID
+            "YOUR_TEMPLATE_ID",  // 🔴 Replace Template ID
+            this
+        ).then(
+            function () {
+                status.style.color = "green";
+                status.innerText = "Hiring request submitted successfully!";
+                document.getElementById("hireTalentForm").reset();
+            },
+            function (error) {
+                status.style.color = "red";
+                status.innerText = "Submission failed. Please try again.";
+                console.error(error);
+            }
+        );
+    });
+</script>
+
+</body>
+</html>

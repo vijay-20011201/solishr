@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Partner With Us | Solis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6ff;
+        }
+
+        .partner-form {
+            max-width: 600px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 18px 42px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0047AB;
+            margin-bottom: 25px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 14px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: none;
+            height: 110px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #0047AB, #FF6B35);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.95;
+        }
+
+        .status {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="partner-form">
+    <h2>Partner With Us</h2>
+
+    <form id="partnerForm">
+
+        <input type="text" name="company_name" placeholder="Company Name" required>
+
+        <input type="text" name="industry" placeholder="Industry / Domain" required>
+
+        <input type="text" name="company_location" placeholder="Company Location" required>
+
+        <input type="url" name="company_website" placeholder="Company Website">
+
+        <input type="text" name="contact_name" placeholder="Contact Person Full Name" required>
+
+        <input type="text" name="designation" placeholder="Designation" required>
+
+        <input type="email" name="contact_email" placeholder="Business Email" required>
+
+        <input type="tel" name="contact_phone" placeholder="Phone Number" required>
+
+        <button type="submit">Submit Partnership Request</button>
+
+        <div class="status" id="status"></div>
+    </form>
+</div>
+
+<script>
+    // Initialize EmailJS
+    (function () {
+        emailjs.init("YOUR_PUBLIC_KEY"); // 🔴 Replace with your EmailJS Public Key
+    })();
+
+    // Submit Partner Form
+    document.getElementById("partnerForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const status = document.getElementById("status");
+        status.innerText = "Submitting request...";
+        status.style.color = "black";
+
+        emailjs.sendForm(
+            "YOUR_SERVICE_ID",   // 🔴 Replace
+            "YOUR_TEMPLATE_ID",  // 🔴 Replace
+            this
+        ).then(
+            function () {
+                status.style.color = "green";
+                status.innerText = "Partnership request submitted successfully!";
+                document.getElementById("partnerForm").reset();
+            },
+            function (error) {
+                status.style.color = "red";
+                status.innerText = "Submission failed. Please try again.";
+                console.error("EmailJS Error:", error);
+            }
+        );
+    });
+</script>
+
+</body>
+</html>
