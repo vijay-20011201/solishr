@@ -260,7 +260,7 @@ section {
 
 /* Remove overlay effect */
 .welcome .section-overlay {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .welcome-content {
@@ -278,7 +278,7 @@ section {
 .welcome-text p {
     font-size: 1.1rem;
     line-height: 1.9;
-    color: #ffffff;   /* ✅ change to white for readability */
+    color: #050505;   /* ✅ change to white for readability */
     margin-bottom: 20px;
 }
 
@@ -367,7 +367,7 @@ section {
 }
 
 .mission .section-overlay {
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(255, 255, 255, 0.85);
 }
 
 .mission-content {
@@ -388,7 +388,7 @@ section {
 .mission-text p {
     font-size: 1.1rem;
     line-height: 1.9;
-    color: #e7e5e5;
+    color: #000000;
     margin-bottom: 20px;
 }
 
@@ -641,96 +641,86 @@ section {
 
 /* Services Section */
 .services {
-    background: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1920') center/cover;
+    background: #f8f9fb;
+    padding: 90px 40px;
 }
 
-.services .section-overlay {
-    background: rgba(255, 255, 255, 0.97);
-}
-
-.services-intro {
-    max-width: 800px;
-    margin: 0 auto 50px;
+.section-title {
     text-align: center;
-}
-
-.services-intro p {
-    font-size: 1.1rem;
-    line-height: 1.9;
-    color: #555;
+    font-size: 42px;
+    color: #0047AB;
+    margin-bottom: 25px;
+    font-weight: 700;
 }
 
 .services-grid {
+    max-width: 1200px;
+    margin: 0 auto 40px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: 30px;
 }
 
-.service-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    border-top: 5px solid #0047AB;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+/* Card – image-1 style */
+.service-card-row {
+    background: #ffffff;
+    padding: 28px 32px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-    transition: left 0.7s ease;
+.service-card-row:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0,71,171,0.18);
 }
 
-.service-card:hover::before { left: 100%; }
-.service-card:nth-child(2n) { border-top-color: #FF6B35; }
-
-.service-card:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 25px 60px rgba(0, 71, 171, 0.3);
-    border-top-width: 8px;
-}
-
+/* Icon */
 .service-icon {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    display: inline-block;
-    transition: transform 0.6s ease;
+    width: 60px;
+    height: 60px;
+    background: #eef3ff;
+    border-radius: 14px;
+    font-size: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.service-card:hover .service-icon {
-    transform: scale(1.2) rotate(360deg);
-}
-
-.service-card h3 {
+/* Text */
+.service-content h3 {
+    font-size: 20px;
     color: #0047AB;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 6px;
 }
 
-.service-card p {
+.service-content p {
+    font-size: 15px;
     color: #666;
-    line-height: 1.8;
-    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
+/* Note */
 .services-note {
     text-align: center;
-    font-size: 1.1rem;
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.05rem;
     color: #555;
     font-style: italic;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.8;
 }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* Statistics Section */
 .statistics {
@@ -932,61 +922,65 @@ section {
     line-height: 1.9;
 }
 
+/* Grid */
 .benefits-grid,
 .employer-benefits {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 30px;
 }
 
-.benefit-card,
-.employer-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    text-align: center;
+/* Row Card */
+.benefit-row {
+    background: #ffffff;
+    padding: 28px 32px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.benefit-card { border-left: 5px solid #FF6B35; }
-.employer-card { border-top: 5px solid #0047AB; }
-
-.benefit-card:nth-child(2n) { border-left-color: #0047AB; }
-.employer-card:nth-child(2n) { border-top-color: #FF6B35; }
-
-.benefit-card:hover,
-.employer-card:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 25px 60px rgba(0, 71, 171, 0.3);
+.benefit-row:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0,71,171,0.18);
 }
 
-.benefit-icon,
-.card-icon {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    display: inline-block;
-    transition: transform 0.6s ease;
+/* Icon */
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: #eef3ff;
+    border-radius: 14px;
+    font-size: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.benefit-card:hover .benefit-icon,
-.employer-card:hover .card-icon {
-    transform: scale(1.2) rotate(360deg);
-}
-
-.benefit-card h3,
-.employer-card h3 {
+/* Text */
+.benefit-content h3 {
     color: #0047AB;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.3rem;
+    margin-bottom: 6px;
 }
 
-.benefit-card p,
-.employer-card p {
+.benefit-content p {
     color: #666;
-    line-height: 1.8;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.6;
 }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .benefits-grid,
+    .employer-benefits {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* Testimonials Section */
 .testimonials {
@@ -1338,7 +1332,7 @@ section {
             <h2 class="section-title">Welcome to Solis Human Resource Solutions</h2>
             <div class="welcome-content">
                 <div class="welcome-text">
-                    <p>Solis is built on a simple idea: people deserve the right opportunities and companies deserve the right talent. We act as a bridge, bringing skilled professionals and growing organizations together with clarity, transparency, and trust.</p>
+                    <p>Solis is built on a simple idea:people deserve the right opportunities and companies deserve the right talent. We act as a bridge,bringing skilled professionals and growing organizations together with clarity,transparency,and trust.</p>
                     <p>We partner with startups, mid-sized businesses, and enterprises to deliver hiring solutions that meet both today's needs and tomorrow's vision. Every engagement is handled with care, confidentiality, and commitment.</p>
                 </div>
             </div>
@@ -1531,39 +1525,54 @@ section {
 </section>
 
 
-    <!-- Services Snapshot - What We Do -->
-    <section class="services slide-right">
-        <div class="section-overlay"></div>
-        <div class="section-container">
-            <h2 class="section-title">Our Expertise</h2>
-            <div class="services-intro">
-                <p>We support organizations and professionals through the complete hiring lifecycle. Our services are designed to adapt to changing workforce demands while maintaining quality and speed.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
+    <section class="services">
+    <div class="section-overlay"></div>
+
+    <div class="section-container">
+        <h2 class="section-title">Our Expertise</h2>
+
+        <div class="services-grid">
+
+            <div class="service-card-row">
+                <div class="service-icon">🎯</div>
+                <div class="service-content">
                     <h3>Recruiting Services</h3>
                     <p>End-to-end recruitment solutions tailored to your organizational needs.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">👥</div>
+            </div>
+
+            <div class="service-card-row">
+                <div class="service-icon">👥</div>
+                <div class="service-content">
                     <h3>Staffing Services</h3>
                     <p>Flexible workforce solutions for contract, temporary, and permanent roles.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">👔</div>
+            </div>
+
+            <div class="service-card-row">
+                <div class="service-icon">👔</div>
+                <div class="service-content">
                     <h3>Leadership Hiring</h3>
                     <p>Executive search and leadership placement for strategic positions.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
+            </div>
+
+            <div class="service-card-row">
+                <div class="service-icon">💼</div>
+                <div class="service-content">
                     <h3>Gig Workforce Solutions</h3>
                     <p>On-demand talent for project-based and freelance requirements.</p>
                 </div>
             </div>
-            <p class="services-note">Each service reflects our commitment to finding talent that fits not only the role but also the culture and future growth of the organization.</p>
+
         </div>
-    </section>
+
+        <p class="services-note">
+            Each service reflects our commitment to finding talent that fits not only the role but also the culture and future growth of the organization.
+        </p>
+    </div>
+</section>
+
 
     <!-- Statistics Section - Our Impact -->
     <section class="statistics fade-in">
@@ -1639,67 +1648,101 @@ section {
         </div>
     </section>
 
-    <!-- Job Seekers Section -->
-    <section class="job-seekers zoom-in">
-        <div class="section-overlay"></div>
-        <div class="section-container">
-            <h2 class="section-title">For Job Seekers</h2>
-            <p class="section-intro">At Solis, your career matters. We guide candidates toward meaningful roles that match their skills and ambition.</p>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
+    <section class="job-seekers">
+    <div class="section-overlay"></div>
+    <div class="section-container">
+
+        <h2 class="section-title">For Job Seekers</h2>
+        <p class="section-intro">
+            At Solis, your career matters. We guide candidates toward meaningful roles that match their skills and ambition.
+        </p>
+
+        <div class="benefits-grid">
+
+            <div class="benefit-row">
+                <div class="benefit-icon">🎯</div>
+                <div class="benefit-content">
                     <h3>Job Opportunities Across Industries</h3>
                     <p>Access diverse roles in multiple sectors and companies.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">📚</div>
+            </div>
+
+            <div class="benefit-row">
+                <div class="benefit-icon">📚</div>
+                <div class="benefit-content">
                     <h3>Interview Preparation</h3>
                     <p>Get expert guidance to present your best self.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🚀</div>
+            </div>
+
+            <div class="benefit-row">
+                <div class="benefit-icon">🚀</div>
+                <div class="benefit-content">
                     <h3>Career Guidance</h3>
                     <p>Receive personalized advice for your career path.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">💬</div>
+            </div>
+
+            <div class="benefit-row">
+                <div class="benefit-icon">💬</div>
+                <div class="benefit-content">
                     <h3>Transparent Hiring Communication</h3>
                     <p>Stay informed throughout the recruitment process.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Employers Section -->
-    <section class="employers slide-right">
-        <div class="section-overlay"></div>
-        <div class="section-container">
-            <h2 class="section-title">For Employers</h2>
-            <p class="section-intro">We work closely with organizations to understand not only job roles but their business goals.</p>
-            <div class="employer-benefits">
-                <div class="employer-card">
-                    <div class="card-icon">🤝</div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="employers">
+    <div class="section-overlay"></div>
+    <div class="section-container">
+
+        <h2 class="section-title">For Employers</h2>
+        <p class="section-intro">
+            We work closely with organizations to understand not only job roles but their business goals.
+        </p>
+
+        <div class="employer-benefits">
+
+            <div class="benefit-row">
+                <div class="benefit-icon">🤝</div>
+                <div class="benefit-content">
                     <h3>Dedicated Hiring Support</h3>
                     <p>A committed team working exclusively on your recruitment needs.</p>
                 </div>
-                <div class="employer-card">
-                    <div class="card-icon">⚡</div>
+            </div>
+
+            <div class="benefit-row">
+                <div class="benefit-icon">⚡</div>
+                <div class="benefit-content">
                     <h3>Fast Turnaround</h3>
                     <p>Quick and efficient hiring without compromising on quality.</p>
                 </div>
-                <div class="employer-card">
-                    <div class="card-icon">✓</div>
+            </div>
+
+            <div class="benefit-row">
+                <div class="benefit-icon">✓</div>
+                <div class="benefit-content">
                     <h3>Verified Candidates</h3>
                     <p>Pre-screened professionals ready to contribute from day one.</p>
                 </div>
-                <div class="employer-card">
-                    <div class="card-icon">📊</div>
+            </div>
+
+            <div class="benefit-row">
+                <div class="benefit-icon">📊</div>
+                <div class="benefit-content">
                     <h3>Strategic Workforce Planning</h3>
                     <p>Long-term talent strategies aligned with your business vision.</p>
                 </div>
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Testimonials Section -->
     <section class="testimonials fade-in">

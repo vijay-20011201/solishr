@@ -761,74 +761,80 @@ section {
     color: #0047AB;
     font-size: 1.2rem;
 }
-
-/* ===================== DUAL SECTION ===================== */
-.dual-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    min-height: 350px;
-}
-
-.dual-box {
-    padding: 90px 50px;
-    color: white;
+/* ========== OUR CLIENTS SECTION ========== */
+.clients-section {
+    background: #ffffff;
+    padding: 80px 40px;
     text-align: center;
+    overflow: hidden;
+}
+
+/* Heading */
+.clients-heading {
+    font-size: 42px;
+    color: #0047AB;
+    font-weight: 700;
+}
+
+/* Underline (same style as image) */
+.heading-underline {
+    margin: 12px auto 40px;
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #0047AB, #FF6B35);
+    border-radius: 10px;
+}
+
+/* Marquee Wrapper */
+.clients-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Track */
+.clients-track {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    animation: scroll-left 30s linear infinite;
+    width: max-content;
 }
 
-.candidates {
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.92), rgba(255, 140, 97, 0.92)),
-                url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920') center/cover no-repeat;
+/* Logos */
+.clients-track img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: 0.3s;
 }
 
-.companies {
-    background: linear-gradient(135deg, rgba(0, 71, 171, 0.92), rgba(0, 51, 128, 0.92)),
-                url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920') center/cover no-repeat;
+.clients-track img:hover {
+    transform: scale(1.05);
 }
 
-.partners {
-    background: linear-gradient(135deg, rgba(34, 193, 195, 0.92), rgba(61, 153, 112, 0.92)),
-                url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920') center/cover no-repeat;
+/* Animation */
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
 
-.dual-box h2 {
-    font-size: 2.4rem;
-    margin-bottom: 15px;
+/* Mobile */
+@media (max-width: 768px) {
+    .clients-heading {
+        font-size: 32px;
+    }
+    .clients-track img {
+        height: 50px;
+    }
 }
 
-.dual-box p {
-    max-width: 450px;
-    margin: 0 auto 25px;
-    line-height: 1.8;
-    font-size: 1.1rem;
-}
 
-.dual-actions {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.dual-btn {
-    padding: 14px 35px;
-    background: white;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 50px;
-    transition: 0.3s ease;
-}
-
-.candidates .dual-btn { color: #FF6B35; }
-.companies .dual-btn { color: #0047AB; }
-.partners .dual-btn { color: #137a6e; }
-
-.dual-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-}
 
 /* ===================== TESTIMONIALS SECTION ===================== */
 .testimonials {
@@ -867,6 +873,112 @@ section {
     font-weight: 600;
     color: #0047AB;
     font-size: 1.1rem;
+}
+/* =======================
+   Triple Section Layout
+======================= */
+
+.dual-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 350px;
+}
+
+/* =======================
+   Box Common
+======================= */
+
+.dual-box {
+    padding: 90px 50px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* =======================
+   Section Backgrounds
+======================= */
+
+/* Candidates */
+.candidates {
+    background: linear-gradient(
+                    135deg,
+                    rgba(255, 107, 53, 0.92),
+                    rgba(255, 140, 97, 0.92)
+                ),
+                url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920')
+                center/cover no-repeat;
+}
+
+/* Companies */
+.companies {
+    background: linear-gradient(
+                    135deg,
+                    rgba(0, 71, 171, 0.92),
+                    rgba(0, 51, 128, 0.92)
+                ),
+                url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920')
+                center/cover no-repeat;
+}
+
+/* Partners */
+.partners {
+    background: linear-gradient(
+                    135deg,
+                    rgba(34, 193, 195, 0.92),
+                    rgba(61, 153, 112, 0.92)
+                ),
+                url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920')
+                center/cover no-repeat;
+}
+
+/* =======================
+   Typography
+======================= */
+
+.dual-box h2 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+}
+
+.dual-box p {
+    max-width: 450px;
+    margin: 0 auto 25px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* =======================
+   Button Layout
+======================= */
+
+.dual-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dual-btn {
+    padding: 14px 35px;
+    background: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+/* Button color per section */
+.candidates .dual-btn { color: #FF6B35; }
+.companies .dual-btn { color: #0047AB; }
+.partners .dual-btn  { color: #137a6e; }
+
+/* Hover */
+.dual-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
 }
 
 /* ===================== SCROLL ANIMATIONS ===================== */
@@ -1604,39 +1716,37 @@ section {
             </div>
         </div>
     </section>
+    <section class="clients-section">
 
-    <!-- Candidates, Companies & Partners Section -->
-<section class="dual-section">
+    <h2 class="clients-heading">Our Clients</h2>
+    <div class="heading-underline"></div>
 
-    <!-- Candidates -->
-    <div class="dual-box candidates">
-        <h2>For Candidates</h2>
-        <p>
-            Find the right job that matches your skills, passion, and career goals. 
-            Upload your profile and let us connect you to the best opportunities.
-        </p>
-        <a href="#" class="dual-btn">Upload Resume</a>
-        <a href="contactform.html" class="dual-btn">Contact Us</a>
-    </div>
+    <div class="clients-marquee">
+        <div class="clients-track">
+            <!-- ORIGINAL 10 LOGOS -->
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
 
-    <!-- Companies -->
-    <div class="dual-box companies">
-        <h2>For Companies</h2>
-        <p>
-            Hire verified professionals who align with your business goals, team culture, 
-            and performance expectations.
-        </p>
-        <a href="companyform.html" class="dual-btn">Request Talent</a>
-    </div>
-
-    <!-- Partners -->
-    <div class="dual-box partners">
-        <h2>For Partners</h2>
-        <p>
-            Collaborate with us as a staffing partner and expand your reach by delivering 
-            trusted talent solutions together.
-        </p>
-        <a href="partnerform.html" class="dual-btn">Partner With Us</a>
+            <!-- DUPLICATE FOR SEAMLESS LOOP -->
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+            <img src="Gifs/Solis_Logo_Final.png" alt="Client 1">
+        </div>
     </div>
 
 </section>
@@ -1656,6 +1766,45 @@ section {
             </div>
         </div>
     </section>
+
+    <!-- Candidates, Companies & Partners Section -->
+<section class="dual-section">
+
+    <!-- LEFT -->
+    <div class="dual-box candidates">
+        <h2>For Candidates</h2>
+        <p>
+            Find the right job that matches your skills, passion, and career goals. 
+            Upload your profile and let us connect you to the best opportunities.
+        </p>
+
+        <div class="dual-actions">
+            <a href="#" class="dual-btn">Upload Resume</a>
+            <a href="contactform.html" class="dual-btn">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="dual-box companies">
+        <h2>For Companies</h2>
+        <p>
+            Hire verified professionals who align with your business goals, team culture, 
+            and performance expectations.
+        </p>
+        <a href="companyform.html" class="dual-btn">Request Talent</a>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="dual-box partners">
+        <h2>For Partners</h2>
+        <p>
+            Collaborate with us to deliver talent solutions, staffing support, 
+            and workforce growth initiatives across industries.
+        </p>
+        <a href="partnerform.html" class="dual-btn">Partner With Us</a>
+    </div>
+
+</section>
 
     <div id="footer"></div>
 

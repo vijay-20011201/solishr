@@ -399,11 +399,14 @@ body {
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* Reset counter */
 .terms-list {
     list-style: none;
     padding: 0;
+    counter-reset: term-counter;
 }
 
+/* List item */
 .terms-list li {
     padding: 15px 0;
     padding-left: 35px;
@@ -411,20 +414,24 @@ body {
     position: relative;
     color: #555;
     line-height: 1.7;
+    counter-increment: term-counter;
 }
 
 .terms-list li:last-child {
     border-bottom: none;
 }
 
+/* Auto numbering 1,2,3... */
 .terms-list li::before {
-    content: '✓';
+    content: counter(term-counter);
     position: absolute;
     left: 0;
+    top: 15px;
     color: #0047AB;
     font-weight: 700;
     font-size: 1.2rem;
 }
+
 
 /* ===== MODAL ===== */
 .modal {
